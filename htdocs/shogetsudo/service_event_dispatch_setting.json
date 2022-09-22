@@ -1,0 +1,77 @@
+{
+  "file_id": "SO29",
+  "block_section_list": [
+    {
+      "title": "移動完了通知",
+      "id": "info_arrival",
+      "dispatch_type": "1",
+      "url": "http://localhost/shogetsudo/complete.php"
+    },
+    {
+      "title": "障害物検知通知",
+      "id": "info_obstacle_detection",
+      "dispatch_type": "1",
+      "url": "http://localhost/shogetsudo/halt.php"
+    },
+    {
+      "title": "移動開始通知",
+      "id": "info_move_start",
+      "dispatch_type": "1",
+      "url": "http://localhost/shogetsudo/onmove.php"
+    },
+    {
+      "title": "移動再開通知",
+      "id": "info_restart_move",
+      "dispatch_type": "1",
+      "url": "http://localhost/shogetsudo/onmove.php"
+    },
+    {
+      "title": "一時停止",
+      "id": "info_stop_move",
+      "dispatch_type": "1",
+      "url": "http://localhost/shogetsudo/select.php"
+    },
+    {
+      "title": "走行トレース完了通知",
+      "id": "res_route_trace",
+      "dispatch_type": "1",
+      "url": "http://localhost/shogetsudo/index.php"
+    },
+    {
+      "title": "区間トレース完了通知",
+      "id": "res_section_route_trace",
+      "dispatch_type": "1",
+      "url": "http://localhost/shogetsudo/index.php"
+    },
+    {
+      "title": "ロボット状態通知",
+      "id": "robot_status_notice",
+      "dispatch_type": "2",
+      "url": ""
+    },
+    {
+      "title": "バンパセンサ通知",
+      "id": "info_motor_collision_detection",
+      "dispatch_type": "1",
+      "url": "http://localhost/shogetsudo/relocate.php?mode=1"
+    },
+    {
+      "title": "マークロスト通知",
+      "id": "info_motor_marklost_detection",
+      "dispatch_type": "1",
+      "url": "http://localhost/shogetsudo/relocate.php?mode=4"
+    },
+    {
+      "title": "モータートラブル検知通知",
+      "id": "info_motor_trouble_detection",
+      "dispatch_type": "1",
+      "url": "http://localhost/shogetsudo/relocate.php?mode=2"
+    },
+    {
+      "title": "モーター指令実行不能通知",
+      "id": "info_motor_cmdexecution_error",
+      "dispatch_type": "1",
+      "url": "http://localhost/shogetsudo/relocate.php?mode=3"
+    }
+  ]
+}

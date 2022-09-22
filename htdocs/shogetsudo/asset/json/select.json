@@ -1,0 +1,10 @@
+[
+  {
+    "name": "目的地を選択してください",
+    "audio": "http://localhost/shogetsudo/asset/announce/select/normal.mp3"
+  },
+  {
+    "name": "僕を向かわせたい場所を選んでください",
+    "audio": "http://localhost/shogetsudo/asset/announce/select/pattern1.mp3"
+  }
+]

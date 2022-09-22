@@ -1,0 +1,10 @@
+[
+  {
+    "name": "運搬モードを起動します",
+    "audio": "http://localhost/shogetsudo/asset/announce/wakeup/normal.mp3"
+  },
+  {
+    "name": "こんにちは。BUDDYです。",
+    "audio": "http://localhost/shogetsudo/asset/announce/wakeup/greeting.mp3"
+  }
+]

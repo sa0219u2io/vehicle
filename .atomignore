@@ -1,0 +1,11 @@
+tree-ignore:enable
+desktop.ini
+.gitkeep
+*.bat
+README.txt
+nginx
+php
+*.zip
+*.yml
+*.ico
+*.zip

@@ -1,0 +1,15 @@
+version: "3"
+services:
+  php:
+    image: php:7.4-fpm
+    volumes:
+      - ./htdocs/:/usr/share/nginx/html
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+      - ./htdocs/:/usr/share/nginx/html
+    restart: always
+    ports: ["80:80"]
+    depends_on: ["php"]

@@ -1,0 +1,18 @@
+{
+	"type":"get_sensor_data",
+	"data":{
+		"ids":{
+				"detection_distance":[80,80,50,50,60,"ERR","ERR",-1],
+				"detection_existence":[1,1,1,1,1,1,0,0]
+		},
+		"uls":{
+				"detection_distance":50,
+				"detection_existence":1
+		},
+		"cls":{
+				"camera1_existence":1,
+				"camera2_existence":0
+		},
+		"batterylevel":70
+	}
+}

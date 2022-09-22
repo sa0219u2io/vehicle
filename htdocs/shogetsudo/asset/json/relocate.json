@@ -1,0 +1,10 @@
+[
+  {
+    "name": "通常",
+    "audio": "http://localhost/shogetsudo/asset/announce/relocate/normal.mp3"
+  },
+  {
+    "name": "フランクバージョン",
+    "audio": "http://localhost/shogetsudo/asset/announce/relocate/pattern1.mp3"
+  }
+]

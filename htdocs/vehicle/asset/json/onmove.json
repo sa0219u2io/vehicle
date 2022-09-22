@@ -1,0 +1,10 @@
+[
+  {
+    "name": "移動開始します",
+    "audio": "http://localhost/vehicle/asset/announce/onmove/normal.mp3"
+  },
+  {
+    "name": "メッセージなし",
+    "audio": "http://localhost/vehicle/asset/announce/onmove/null.mp3"
+  }
+]

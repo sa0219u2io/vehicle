@@ -1,0 +1,10 @@
+[
+  {
+    "name": "往復運転のため折り返します",
+    "audio": "http://localhost/vehicle/asset/announce/turnaround/normal.mp3"
+  },
+  {
+    "name": "メッセージなし",
+    "audio": "http://localhost/vehicle/asset/announce/turnaround/null.mp3"
+  }
+]

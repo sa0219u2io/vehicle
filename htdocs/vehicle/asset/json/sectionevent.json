@@ -1,0 +1,12 @@
+[
+  {
+    "name": "設定なし",
+    "mark_id": "",
+    "audio": ""
+  },
+  {
+    "name": "BUDDY移動中警告",
+    "mark_id": "0002",
+    "audio": "http://localhost/vehicle/asset/sectionevent/normal.mp3"
+  }
+]
