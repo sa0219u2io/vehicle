@@ -360,6 +360,10 @@ menu {
 .selected {
   background: #F09CB4;
 }
+.powered {
+  background: #008a9b;
+  color: white;
+}
 
 /* モーダル 速度 */
 .flexbox {

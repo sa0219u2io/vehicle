@@ -757,8 +757,8 @@ function viewRoundList() {
 function viewHubList() {
   $('#hublist').empty();
   //setVariable("hub_destination_id", 0);
-  let hub = getVariable("hub_destination_id");
-  let me = '.st'+hub;
+  let hub = JSON.parse(getVariable("hub_destination_id"));
+  // let me = '.st'+hub;
 
   res = getVariable('dl_all_array')
   if (res) {
@@ -777,21 +777,31 @@ function viewHubList() {
     $('#hublist').append('<div id="hubrow" class="st'+key+'" onclick="'+stfuc+'">'+deslist[key]+'</div>');
   });
 
-  $(me).addClass("selected");
+  //console.log(hub)
+  Object.keys(hub).forEach(function (key) {
+    //console.log(key)
+    var me = '.st'+hub[key];
+    if (key == 0) {
+      $(me).addClass("powered");
+    } else {
+      $(me).addClass("selected");
+    }
+
+  });
 }
 
 //拠点設定
 function setHubDest(destination_id) {
-  let hub = getVariable("hub_destination_id");
-  setVariable('hub_destination_id', destination_id);
-  let me = '.st'+destination_id;
-  if (destination_id == hub)  {
-    $(me).removeClass("selected");
-    setVariable('hub_destination_id', 0);
-    return;
+  let hub = JSON.parse(getVariable("hub_destination_id"));
+  //拠点設定済みなら
+  if (hub.includes(destination_id)) {
+    hub = hub.filter(n => n !== destination_id);
+  } else {
+    hub.push(destination_id)
   }
-  $("[id=hubrow]").removeClass("selected");
-  $(me).addClass("selected");
+  setVariable('hub_destination_id', JSON.stringify(hub));
+  viewHubList();
+  writeVariable()
 }
 
 //連続走行配列に追加

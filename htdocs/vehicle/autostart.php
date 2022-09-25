@@ -53,8 +53,9 @@
 
       case '2': //拠点走行モード
         setLog(0,'拠点走行')
-        nextid = getVariable('hub_destination_id');
-        if (current_destination_id == nextid) {
+        hub = JSON.parse(getVariable('hub_destination_id'));
+        nextid = hub[0];
+        if (hub.includes(current_destination_id)) {
           transScreen('select')
         }
         playAnnounce('autostart')

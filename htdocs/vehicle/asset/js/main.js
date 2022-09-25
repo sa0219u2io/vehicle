@@ -2,7 +2,7 @@
 //初期設定
 /////////////////////////////////////////////////////////////////////////////////////////
 //vehicleフォルダ内にて
-//zip -r ../vehicle2-2-1.zip *
+//zip -r ../vehicle2-2-3.zip *
 //debug 0: 本番, 1: デバッグ
 const debug = localStorage.getItem('debug')?1:0;
 const webroot = 'http://localhost/'
@@ -16,7 +16,7 @@ if (debug == 0)  {
   var systemUI = window
 }
 const broadcast = new BroadcastChannel('System')
-const mainversion = appname + '2.2.2' + '('+debug+')'
+const mainversion = appname + '2.2.3' + '('+debug+')'
 
 /////////////////////////////////////////////////////////////////////////////////////////
 //共通イニシャル処理

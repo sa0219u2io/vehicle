@@ -1,6 +1,6 @@
 {
     "current_map_id": 0,
-    "hub_destination_id" : "00001",
+    "hub_destination_id" : ["00001"],
     "sequence_destination_id" : "00001",
     "velocity": "100",
     "music_volume": "80",
