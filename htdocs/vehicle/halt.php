@@ -4,5 +4,5 @@
 <?php include('component/template.php'); ?>
 <script>
   get_sensor_data()
-  setTimeout(function(){setAnnounce('halt')}, 200)
+  setTimeout(function(){playAnnounce('halt')}, 200)
 </script>

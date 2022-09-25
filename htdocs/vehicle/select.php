@@ -20,7 +20,7 @@
   } else {
     setTimeout(set_destination_list,500)
   }
-  setAnnounce('select')
+  playAnnounce('select')
   var array = []
   array[0] = '通常走行'
   array[1] = '連続走行'

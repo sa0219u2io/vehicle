@@ -34,8 +34,8 @@
     <script>const appname = '<?=APP?>'</script>
     <script type="text/javascript" src="asset/js/jquery.js"></script>
     <script type="text/javascript" src="asset/js/driver.js"></script>
-    <script type="text/javascript" src="asset/js/api.js"></script>
     <script type="text/javascript" src="asset/js/callback.js"></script>
+    <script type="text/javascript" src="asset/js/api.js"></script>
     <script type="text/javascript" src="asset/js/frame.js"></script>
     <script type="text/javascript" src="asset/js/debug.js"></script>
     <script type="text/javascript" src="asset/js/main.js"></script>

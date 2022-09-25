@@ -6,7 +6,7 @@
 <script>
 //起動時スクリプト
 setMaps()
-setAnnounce('map')
+playAnnounce('map')
 function changeMap(map_id) {
   loadBall()
   setVariable('current_map_id', map_id)

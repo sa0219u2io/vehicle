@@ -5,7 +5,7 @@
 <script>
 //起動時スクリプト
   $('.wrapper').addClass('onmove')
-  setAnnounce('onmove')
+  playAnnounce('onmove')
   setOnmoveAudio()
   set_current_destination()
   var array = []

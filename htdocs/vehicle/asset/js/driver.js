@@ -38,98 +38,32 @@ function getParam(type) {
 
 //JSON取得
 function readJson(type, number) {
-  var url=webroot+appname+'/asset/json/'+type+'.json';
-  setLog(0,type);
-  setLog(0,number);
+  if (type == "music") {
+    var url=webroot+appname+'/asset/json/music.json';
+  } else {
+    var url=webroot+appname+'/asset/json/announce.json';
+  }
   $.getJSON(url, (data) => {
-    //console.log(data);
     if (number === "99") {
       var arr = [];
-      for (i=0; i<data.length; i++) {
-        arr[i] = data[i].name;
-      }
-      var response = arr;
-      switch(type) {
-        case("music"):
-          viewMusicCallback(response);
-        break
-        case("map"):
-          viewAnnounce(type, response)
-        break
-        case("wakeup"):
-          viewAnnounce(type, response)
-        break
-        case("select"):
-          viewAnnounce(type, response)
-        break
-        case("sequence"):
-          viewAnnounce(type, response)
-        break
-        case("halt"):
-          viewAnnounce(type, response)
-        break
-        case("complete"):
-          viewAnnounce(type, response)
-        break
-        case("relocate"):
-          viewAnnounce(type, response)
-        break
-        case("onmove"):
-          viewAnnounce(type, response)
-        break
-        case("autostart"):
-          viewAnnounce(type, response)
-        break
-        case("turnaround"):
-          viewAnnounce(type, response)
-        break
-        default:
-        break
+      if (type == "music") {
+        for (i=0; i<data.length; i++) {
+          arr[i] = data[i].name;
+        }
+        viewMusicCallback(arr);
+      } else {
+        array = data[type]
+        console.log(array)
+        for (i=0; i < array.length; i++) {
+          arr[i] = array[i].name;
+        }
+        viewAnnounce(type, arr)
       }
     } else {
-      response = data[number];
-      //console.log(responese);
-      switch(type) {
-       case("music"):
-         setOnmoveAudioCallback(response);
-       break
-       case("message"):
-         playMessage(response);
-       break
-       case("sectionevent"):
-         playSectionevent(response);
-       break
-       case("wakeup"):
-         setAnnounceCallback(response);
-       break
-       case("map"):
-         setAnnounceCallback(response);
-       break
-       case("select"):
-         setAnnounceCallback(response);
-       break
-       case("sequence"):
-         setAnnounceCallback(response);
-       break
-       case("halt"):
-         setAnnounceCallback(response);
-       break
-       case("complete"):
-         setAnnounceCallback(response);
-       break
-       case("relocate"):
-         setAnnounceCallback(response);
-       break
-       case("onmove"):
-         setAnnounceCallback(response);
-       break
-       case("autostart"):
-         setAnnounceCallback(response);
-       break
-       case("turnaround"):
-         setAnnounceCallback(response);
-       default:
-       break
+      if (type == "music") {
+        setOnmoveAudioCallback(data[number]);
+      } else {
+        playAnnounceCallback(data[type][number]);
       }
     }
   });
@@ -291,29 +225,31 @@ function setMainMessage(string) {
 }
 
 //アナウンス設定
-function setAnnounce(type) {
+function playAnnounce(type) {
   var announce = JSON.parse(getVariable('announce'))
   var num = announce[type];
   readJson(type, num);
 }
 
 //アナウンス再生
-function setAnnounceCallback(data) {
-  console.log(data)
-  setLog(0,data.audio);
-  var announce = new Audio(data.audio);
-  vol = getVariable('announce_volume')/100
-  announce.volume = vol;
-  announce.play();
+function playAnnounceCallback(data) {
+  if (data.audio != "") {
+    url = webroot+appname+'/asset/announce/'+data.audio
+    setLog(0,url);
+    var announce = new Audio(url);
+    vol = getVariable('announce_volume')/100
+    announce.volume = vol;
+    announce.play();
+  }
 }
 
 //アナウンスの再生を設定する
-function setAnnounceFile(type, number) {
+function setAnnounce(type, number) {
   var announce = JSON.parse(getVariable('announce'))
   announce[type] = number;
   setVariable('announce', JSON.stringify(announce))
   writeVariable()
-  setAnnounce(type)
+  playAnnounce(type)
   closeModal()
 }
 
@@ -357,17 +293,17 @@ function setLog(type, obj) {
   //type 0: コンソールログ, 1: コンソールデバッグ, 2:コンソールトレース
   var objtype =0;
   if (typeof obj == 'object') objtype = 1;
-  //console.log(objtype)
+  name = setLog.caller.name
   switch(type) {
     case 0:
       if (objtype == 0) {
-        console.log(setLog.caller.name, ':', obj)
+        console.log(name, ':', obj)
       } else {
-        console.log(setLog.caller.name, ':',JSON.stringify(obj));
+        console.log(name, ':',JSON.stringify(obj));
       }
       break;
     case 1:
-      console.debug(setLog.caller.name, ':', obj)
+      console.debug(name, ':', obj)
       break;
     case 2:
       console.trace()

@@ -355,7 +355,7 @@ $(function modal(){
   $("#announcevolset").click(function(){
     var num = $("#announcenum").text();
     setVariable('announce_volume', num);
-    setAnnounce('wakeup')
+    playAnnounce('wakeup')
     setUnderMessage('発話再生音量を'+num+'％にセットしました')
     writeVariable()
   });
@@ -364,7 +364,7 @@ $(function modal(){
   $("#announcevolclear").click(function(){
     var num = '100';
     setVariable('announce_volume', num);
-    setAnnounce('turnaround')
+    playAnnounce('turnaround')
     setUnderMessage('発話再生音量を'+num+'％にセットしました')
     writeVariable()
   });
@@ -863,6 +863,6 @@ function viewAnnounce(type, response) {
   $('#'+type).append('<div id="annouce_list" class="selected">'+response[current_announce]+'</div><hr>');
   $('#'+type).append('<div id="annouce_list_select"><div>');
   for (i=0; i<response.length; i++) {
-    $('#annouce_list_select').append('<div onclick= setAnnounceFile(\''+ type+'\','+ i +')>'+ response[i]+'</div>');
+    $('#annouce_list_select').append('<div onclick= setAnnounce(\''+ type+'\','+ i +')>'+ response[i]+'</div>');
   }
 }

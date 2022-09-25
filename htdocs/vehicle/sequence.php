@@ -13,7 +13,7 @@
   }
   setTimeout(set_destination_list_sequence,100)
 //タイマースクリプト
-  setTimeout(function(){setAnnounce('sequence')}, 200)
+  setTimeout(function(){playAnnounce('sequence')}, 200)
 //ループスクリプト
   var countup = function(){
   }

@@ -11,7 +11,7 @@
 //起動時スクリプト
   //clearMoveStatus()
   setVariable('onrelocate', 1)
-  setTimeout(function(){setAnnounce('relocate')}, 200)
+  setTimeout(function(){playAnnounce('relocate')}, 200)
 
 //タイマースクリプト
   var countup = function(){

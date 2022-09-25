@@ -46,7 +46,7 @@
         setVariable('sequencei', i)
         setVariable('move_from', current_destination_id)
         setVariable('move_to', nextid)
-        setAnnounce('autostart')
+        playAnnounce('autostart')
         setTimeout(function(){req_move(nextid)}, time)
       }
       break;
@@ -57,7 +57,7 @@
         if (current_destination_id == nextid) {
           transScreen('select')
         }
-        setAnnounce('autostart')
+        playAnnounce('autostart')
         autostart = getWait('hub')
         setUnderMessage(deslist[nextid]+'へ向かいます(拠点走行)')
         var time = autostart*1000
@@ -81,12 +81,12 @@
             //往復モードなら
             setVariable('roundi', 1)
             transScreen('select')
-            setAnnounce('autostart')
+            playAnnounce('autostart')
           } else {
             //シングルモードなら
             setVariable('roundi', 1)
             transScreen('select')
-            setAnnounce('autostart')
+            playAnnounce('autostart')
           }
         } else {
           //次の目的地がある場合
@@ -98,7 +98,7 @@
           setVariable('roundi', i)
           setVariable('move_from', current_destination_id)
           setVariable('move_to', nextid)
-          setAnnounce('autostart')
+          playAnnounce('autostart')
           setTimeout(function(){req_move(nextid)}, time)
         }
       break;

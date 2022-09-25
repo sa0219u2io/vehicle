@@ -18,7 +18,7 @@
     }
   }
   setTimeout(checkCurrentMap, 3000)
-  setTimeout(function(){setAnnounce('wakeup')}, 500)
+  setTimeout(function(){playAnnounce('wakeup')}, 500)
   setTimeout(get_destination_list, 1500)
 
 //ループスクリプト

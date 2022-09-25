@@ -16,7 +16,7 @@ if (debug == 0)  {
   var systemUI = window
 }
 const broadcast = new BroadcastChannel('System')
-const mainversion = appname + '2.2.1' + '('+debug+')'
+const mainversion = appname + '2.2.2' + '('+debug+')'
 
 /////////////////////////////////////////////////////////////////////////////////////////
 //共通イニシャル処理
@@ -74,8 +74,6 @@ function do_trace() {
       return;//トレースさせない
     }
   }
-  console.debug(start)
-  console.debug(goal)
   req_route_trace()
 }
 
