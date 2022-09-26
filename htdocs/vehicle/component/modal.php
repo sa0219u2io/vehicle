@@ -86,15 +86,16 @@
 </div>
 <div class="modal" id="modal-hub">
   <p class="modaltitle">拠点走行モード設定</p><hr>
-  <p class="modaltitle">目的地待機時間</p>
+  <p class="modaltitle">拠点位置設定</p>
   <div id="hublist" class="modalchild"></div>
+  <p class="modaltitle">目的地待機時間</p>
   <div class="flexbox">
     <div class="inbox"><p id="hubdown"> ◀</p></div>
     <div class="inbox"><div id="hubnum">20</div>秒</div>
     <div class="inbox"><p id="hubup">▶ </p></div>
     <div class="inbox"><button id="hubset">セット</button></div>
   </div>
-  <p>拠点（パントリー等）を選択して頂くと、<br>それ以外の目的地では「拠点に戻る」しか表示されないモード<br>配膳等に最適なモードです</p>
+  <p>拠点（パントリー等）を選択して頂くと、<br>それ以外の目的地では「拠点に戻る」しか表示されないモード<br>配膳等に最適なモードです<br>一番最初に選んだ緑反転の拠点に常に戻るようになります。<br>それ以外にも選択すると、ピンク色になりますが、<br>この拠点では、自動で戻らない設定となります。<br>色のついた拠点をもう一度タップすると選択が外れます。</p>
 </div>
 <div class="modal" id="modal-round">
   <p class="modaltitle">巡回走行モード設定</p><hr>
@@ -113,6 +114,7 @@
   <p class="modaltitle">発話設定</p>
   <hr>
   <div id="announce" class="modalchild"></div>
+  <p class="modaltitle">音量設定</p>
   <div class="flexbox">
     <div class="inbox"><button id="announcevolclear">初期化</button></div>
     <div class="inbox"><p id="announcedown"> ◀</p></div>
