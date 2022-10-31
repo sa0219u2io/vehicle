@@ -1,7 +1,7 @@
 {
 	"type":"get_current_location",
 	"data":{
-		"destination_id":"00003",
+		"destination_id":"00002",
 		"destination_name":"洗濯室",
 		"destination_kana":"センタクシツ",
 		"mark_id":"XXXXXXXXXX",

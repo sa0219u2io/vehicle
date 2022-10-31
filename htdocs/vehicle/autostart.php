@@ -53,8 +53,16 @@
 
       case '2': //拠点走行モード
         setLog(0,'拠点走行')
+        var current_map_id = getVariable('current_map_id');
         hub = JSON.parse(getVariable('hub_destination_id'));
-        nextid = hub[0];
+        nextid = hub[current_map_id];
+
+        console.log('nextid:'+nextid)
+        console.log('現在地:'+current_destination_id)
+        if (nextid.includes(current_destination_id)) {
+          transScreen('select')
+        }
+
         if (hub.includes(current_destination_id)) {
           transScreen('select')
         }
@@ -82,7 +90,7 @@
             //往復モードなら
             setVariable('roundi', 1)
             transScreen('select')
-            playAnnounce('autostart')
+            playAnnounce('turnaround')
           } else {
             //シングルモードなら
             setVariable('roundi', 1)

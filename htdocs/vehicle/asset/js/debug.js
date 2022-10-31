@@ -48,6 +48,14 @@ function readDebug(data) {
       case("res_change_map"):
         callback_RCM(data);
       break
+      //汎用USBコマンド送信
+      case ("req_usb_command") :
+        callback_RUC(data)
+        break
+      //汎用USBコマンド受信
+      case ("res_read_usb_cache") :
+        callback_RRUC(data)
+        break
       default:
       break
     }

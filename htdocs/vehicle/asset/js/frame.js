@@ -757,8 +757,25 @@ function viewRoundList() {
 function viewHubList() {
   $('#hublist').empty();
   //setVariable("hub_destination_id", 0);
-  let hub = JSON.parse(getVariable("hub_destination_id"));
+  var _temp = getVariable('current_map_id');
+  var current_map_id = String(_temp);
+  console.log('current_map_id:'+current_map_id);
+  let hubarray = JSON.parse(getVariable("hub_destination_id"));
   // let me = '.st'+hub;
+  map_list = JSON.parse(getVariable('map_list'));
+  //console.log(type)
+  console.log(hubarray);
+  Object.keys(map_list).forEach(function (key) {
+    console.log(key);
+    if(hubarray[key]) {
+    } else {
+      hubarray[key] = [];
+    }
+  });
+  console.log(hubarray);
+  var hub = hubarray[current_map_id];
+  setVariable('hub_destination_id', JSON.stringify(hubarray));
+
 
   res = getVariable('dl_all_array')
   if (res) {
@@ -792,14 +809,21 @@ function viewHubList() {
 
 //拠点設定
 function setHubDest(destination_id) {
-  let hub = JSON.parse(getVariable("hub_destination_id"));
+  var _temp = getVariable('current_map_id');
+  var current_map_id = String(_temp);
+  console.log('current_map_id:'+current_map_id);
+  let hubarray = JSON.parse(getVariable("hub_destination_id"));
+  hub = hubarray[current_map_id]; 
+
   //拠点設定済みなら
   if (hub.includes(destination_id)) {
     hub = hub.filter(n => n !== destination_id);
   } else {
     hub.push(destination_id)
   }
-  setVariable('hub_destination_id', JSON.stringify(hub));
+  hubarray[current_map_id] = hub;
+  console.log(hubarray);
+  setVariable('hub_destination_id', JSON.stringify(hubarray));
   viewHubList();
   writeVariable()
 }

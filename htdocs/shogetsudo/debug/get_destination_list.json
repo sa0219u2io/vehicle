@@ -201,6 +201,56 @@
       			"remark":""
     			}
     		]
+    	},
+      {
+    		"map_id":62,
+    		"map_name":"Buddy試験機用マップ62",
+    		"destination_list":[
+    			{
+      			"destination_id":"00001",
+      			"destination_mark_index":1,
+      			"destination_name":"厨房A",
+      			"disp_order":1.0,
+      			"stop_angle":180.0,
+      			"point_x":1,
+      			"point_y":2,
+      			"is_start": 1,
+      			"remark":"2Fスワップポイント"
+    			},
+    			{
+      			"destination_id":"00002",
+      			"destination_mark_index":2,
+      			"destination_name":"調理室",
+      			"disp_order":2.0,
+      			"stop_angle":180.0,
+      			"point_x":1,
+      			"point_y":3,
+      			"is_start": 0,
+      			"remark":""
+          },
+          {
+      			"destination_id":"00003",
+      			"destination_mark_index":3,
+      			"destination_name":"洗濯室",
+      			"disp_order":1.0,
+      			"stop_angle":180.0,
+      			"point_x":1,
+      			"point_y":2,
+      			"is_start": 0,
+      			"remark":"2Fスワップポイント"
+    			},
+    			{
+      			"destination_id":"00004",
+      			"destination_mark_index":4,
+      			"destination_name":"１卓",
+      			"disp_order":2.0,
+      			"stop_angle":180.0,
+      			"point_x":1,
+      			"point_y":3,
+      			"is_start": 0,
+      			"remark":""
+    			}
+    		]
     	}
     ]
   }

@@ -62,7 +62,7 @@ function req_change_map(map_id) {
   data = {
   	"type":"req_change_map",
   	"data": {
-  		"map_id": map_id
+  		"map_id": String(map_id)
   	}
   }
 　sendAPI(data);

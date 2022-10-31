@@ -185,3 +185,13 @@ function callback_RCM(res) {
   writeVariable()
   setTimeout(function(){transScreen('select')}, 1500)
 }
+
+//汎用USBコマンド送信
+function callback_RUC(res) {
+  console.debug(res.data)
+}
+let doorcount;
+//汎用USB受信
+function callback_RRUC (res) {
+  console.debug(res.data)
+}

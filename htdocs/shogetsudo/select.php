@@ -6,10 +6,14 @@
 <script>
 //起動時スクリプト
   //松月堂特別対応
-  if (getVariable('current_map_id') == 25) {
-    setVariable('trip_mode', 1)
-    transScreen('sequence')
-  } else if (getVariable('current_map_id') == 26) {
+  id = getVariable('current_map_id');
+  array = ['25', '26','62'];
+  console.log(id)
+  console.log(array)
+  result = $.inArray(id,array)
+  console.log(result)
+
+  if (result >= 0 ) {
     setVariable('trip_mode', 1)
     transScreen('sequence')
   }

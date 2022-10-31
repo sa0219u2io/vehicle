@@ -1,14 +1,14 @@
 {
-    "current_map_id": "1",
-    "hub_destination_id": "[\"00001\",\"00002\"]",
+    "current_map_id": "6",
+    "hub_destination_id": "[null,[\"00001\",\"00002\"],null,null,null,null,[\"00001\"]]",
     "sequence_destination_id": "00001",
     "velocity": "100",
-    "music_volume": "70",
-    "music": "7",
-    "announce_volume": "30",
-    "announce": "{\"wakeup\":2,\"map\":\"0\",\"select\":\"0\",\"sequence\":1,\"onmove\":\"0\",\"halt\":1,\"face\":\"0\",\"relocate\":\"0\",\"complete\":\"0\",\"autostart\":2,\"turnaround\":\"0\"}",
+    "music_volume": "80",
+    "music": "0",
+    "announce_volume": "100",
+    "announce": "{\"wakeup\":\"0\",\"map\":\"0\",\"select\":\"0\",\"sequence\":\"0\",\"onmove\":\"0\",\"halt\":\"0\",\"face\":\"0\",\"relocate\":\"0\",\"complete\":\"0\",\"autostart\":\"0\",\"turnaround\":\"0\"}",
     "wait": "{\"complete\":\"6\",\"turnaround\":\"25\",\"sequence\":\"25\",\"hub\":\"6\",\"round\":\"6\"}",
-    "trip_mode": "2",
+    "trip_mode": "0",
     "another_route": "0",
-    "kiosk": "off"
+    "kiosk": "on"
 }

@@ -2,7 +2,7 @@
 //初期設定
 /////////////////////////////////////////////////////////////////////////////////////////
 //vehicleフォルダ内にて
-//zip -r ../vehicle2-2-4.zip *
+//zip -r ../vehicle2-2-6.zip *
 //debug 0: 本番, 1: デバッグ
 const debug = localStorage.getItem('debug')?1:0;
 const webroot = 'http://localhost/'
@@ -16,7 +16,7 @@ if (debug == 0)  {
   var systemUI = window
 }
 const broadcast = new BroadcastChannel('System')
-const mainversion = appname + '2.2.4' + '('+debug+')'
+const mainversion = appname + '2.2.6' + '('+debug+')'
 
 /////////////////////////////////////////////////////////////////////////////////////////
 //共通イニシャル処理
@@ -28,6 +28,7 @@ function init() {
   resetVariable()
   scanVariable()
   resetTemp()
+  readZigbee();
   setVariable('log', '再起動');
 }
 
@@ -113,7 +114,7 @@ function do_complete(current_destination_id) {
           setVariable('turnaround_count', turnaround_count)
           time = getWait('complete')
           setMainMessage(time + '秒後に折返し移動を開始します');
-          setAnnounce('turnaround');
+          playAnnounce('turnaround');
           time = time*1000
           setTimeout(function(){req_move(getVariable('move_from'))}, time)
         }
@@ -264,7 +265,7 @@ function clearMoveStatus() {
 
 //Zigbee設定を読み込み
 function readZigbee() {
-  setlog(debug, 'func:'+arguments.callee.name)
+  setLog(debug, 'func:'+arguments.callee.name)
   mode = 1
   if (mode == 0) {
     //右
@@ -277,7 +278,7 @@ function readZigbee() {
   }
 
   $.getJSON(url, (res) => {
-    setlog(debug, res)
+    setLog(debug, res)
     setVariable("zigbee", JSON.stringify(res));
   });
 }

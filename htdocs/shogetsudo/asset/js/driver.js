@@ -217,6 +217,19 @@ function writeVariable() {
         //console.log(response[key])
       }
     }, data);
+
+    map_list = JSON.parse(getVariable('map_list'))
+    console.log(map_list)
+    Object.keys(map_list).forEach(function(key) {
+      vkey = 'sequencearray'+key
+      console.log(vkey);
+      seq = getVariable(vkey);
+      console.log(seq);
+      response[vkey] = seq
+      // console.log('sequencearray'+key)
+      console.log(response[vkey])
+    }, data);
+
     $.ajax({
       type: "POST",
       url: webroot+appname+'/component/ajaxwrite.php?file='+btoa(variablefilename),
@@ -271,15 +284,29 @@ function setOnmoveMovie() {
 //移動時音楽再生
 function setOnmoveMovieCallback(data) {
   setLog(0,data.movie);
+  stopOnmoveAudio()
   $('#video').addClass('video-show');
   //$('#video').appendChild('movie');
   var video = document.createElement('video');
   // video.muted = true;
   video.autoplay = true;
-  video.loop = true;
+  video.loop = false;
   video.playsinline = true;
   video.src = data.movie;
+  video.addEventListener("ended", function()
+	{
+    console.log('addEventListener')
+		nextSetting()
+	}, false);
+
   $('#video').append(video);
+}
+
+function nextSetting() {
+  $('#video').empty();
+  setOnmoveAudio();
+  setTimeout(setOnmoveMovie, 10000)
+  console.log('wait10000')
 }
 
 //移動時音楽停止

@@ -6,6 +6,7 @@
 //起動時スクリプト
   var autostart = 10;
   var i = 0;
+  map_id = getVariable('current_map_id')
 
   //走行モードの取得
   function automove() {
@@ -22,7 +23,7 @@
     switch (trip_mode) {
       case '1': //連続走行モード
       setLog(0,'連続走行')
-      sequencearray = getVariable('sequencearray')
+      sequencearray = getVariable('sequencearray'+map_id)
       array = JSON.parse(sequencearray);
       i = getVariable('sequencei')
       i++
@@ -53,8 +54,12 @@
 
       case '2': //拠点走行モード
         setLog(0,'拠点走行')
-        nextid = getVariable('hub_destination_id');
-        if (current_destination_id == nextid) {
+        var current_map_id = getVariable('current_map_id');
+        hub_destination_array = getVariable('hub_destination_id');
+        nextid = hub_destination_array[current_map_id]
+        console.log('nextid:'+nextid)
+        console.log('現在地:'+current_destination_id)
+        if (nextid.includes(current_destination_id)) {
           transScreen('select')
         }
         autostart = getWait('hub')

@@ -67,7 +67,7 @@
       <div class="undermessage">
       </div>
       <div class="main">
-        <button class="select float" onclick="usbtest()">起動</button>
+        <button class="select float" onclick="req_usb_command(10,0,0)">起動</button>
         <button class="select float" onclick="req_usb_command(20,0,0)">終了</button>
         <button class="select float" onclick="req_usb_command(30,0,0)">再起動</button>
         <button class="select float" onclick="req_usb_command(1000,0,0)">ステータス要求</button>

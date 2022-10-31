@@ -790,9 +790,9 @@ function setHubDest(destination_id) {
 
 //連続走行配列に追加
 function putSequenceArray(destid) {
-  array = getVariable('sequencearray')
+  map_id = getVariable('current_map_id')
+  array = getVariable('sequencearray'+map_id)
   sequencearray = JSON.parse(array)
-
   if (sequencearray[sequencearray.length - 1] == destid) {
     //最後の要素と同じ位置なら
     setUnderMessage('同じ位置を連続して選択することはできません')
@@ -801,7 +801,7 @@ function putSequenceArray(destid) {
 
   sequencearray.push(destid)
   json = JSON.stringify(sequencearray)
-  setVariable('sequencearray', json)
+  setVariable('sequencearray'+map_id, json)
 
   res = getVariable('dl_all_array')
   current_map_id = getVariable('current_map_id')
@@ -811,14 +811,12 @@ function putSequenceArray(destid) {
   $('#sequencepannel').append('<div class="sequencepannel">'+move_to_name+'</div>')
   $('#sequencepannel').append('<div class="sequencearrow">▼</div>')
 
-
-
   if (sequencearray.length == 2) {
     $('#sequencego').append('<div id="sequencemove" onclick="move(\''+sequencearray[1]+'\')">移動開始</div>')
   }
 }
 
 //連続走行配列をクリア
-function clearSequenceArray() {
-  setVariable('sequencearray', '[]')
+function clearSequenceArray(map_id) {
+  setVariable('sequencearray'+map_id, '[]')
 }

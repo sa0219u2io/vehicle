@@ -2,7 +2,7 @@
 //初期設定
 /////////////////////////////////////////////////////////////////////////////////////////
 //vehicleフォルダ内にて
-//zip -r ../shogetsudo1-1-6.zip *
+//zip -r ../shogetsudo1-1-13.zip *
 //debug 0: 本番, 1: デバッグ
 const debug = localStorage.getItem('debug')?1:0;
 const webroot = 'http://localhost/'
@@ -16,7 +16,7 @@ if (debug == 0)  {
   var systemUI = window
 }
 const broadcast = new BroadcastChannel('System')
-const mainversion = appname + '1.1.7' + '('+debug+')'
+const mainversion = appname + '1.1.13' + '('+debug+')'
 
 /////////////////////////////////////////////////////////////////////////////////////////
 //共通イニシャル処理
@@ -214,16 +214,17 @@ function set_destination_list_sequence(type) {
     current_destination_id = getVariable('hub_destination_id')
     //console.log('214:'+current_destination_id)
   }
+  map_id = getVariable('current_map_id')
   //console.log(type)
   if (type == '1') {
-    clearSequenceArray();
+    clearSequenceArray(map_id);
     $('#sequencepannel').empty()
     $('#sequencego').empty()
     putSequenceArray(current_destination_id);
   } else {
-    array = getVariable('sequencearray')
+    array = getVariable('sequencearray'+map_id)
     sequencearray_tmp = JSON.parse(array)
-    clearSequenceArray()
+    clearSequenceArray(map_id)
     console.log(sequencearray_tmp)
     Object.keys(sequencearray_tmp).forEach(function (key) {
       console.log(key+':'+sequencearray_tmp[key])

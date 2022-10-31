@@ -7,7 +7,13 @@
   $('.wrapper').addClass('onmove')
   //setAnnounce('onmove')
   //連続走行なら、自動でムービー再生
-  if (getVariable('current_map_id')==26) {
+  id = getVariable('current_map_id');
+  array = ['26','62'];
+  console.log(id)
+  console.log(array)
+  result = $.inArray(id,array)
+  console.log(result)
+  if (result>=0) {
     setOnmoveMovie()
   } else {
     setOnmoveAudio()
