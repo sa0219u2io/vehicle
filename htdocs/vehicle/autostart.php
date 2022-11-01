@@ -68,11 +68,12 @@
         }
         playAnnounce('autostart')
         autostart = getWait('hub')
-        setUnderMessage(deslist[nextid]+'へ向かいます(拠点走行)')
+        setUnderMessage(deslist[nextid[0]]+'へ向かいます(拠点走行)')
+        console.log('拠点走行to:'+deslist[nextid[0]])
         var time = autostart*1000
         setVariable('move_from', current_destination_id)
-        setVariable('move_to', nextid)
-        setTimeout(function(){req_move(nextid)}, time)
+        setVariable('move_to', nextid[0])
+        setTimeout(function(){req_move(nextid[0])}, time)
       break;
 
       case '3': //巡回走行モード

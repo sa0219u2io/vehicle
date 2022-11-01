@@ -87,6 +87,11 @@ function callback_GCL (res) {
   return
 }
 
+function callback_GMD (res) {
+  map_id = res.data.map_id;
+  setVariable('current_map_id', map_id);
+}
+
 //目的地情報取得指示
 function callback_GDL (res) {
   var current_map_id = getVariable('current_map_id')

@@ -6,6 +6,8 @@
 <script>
 //起動時スクリプト
   setVariable('complete_temp', 0);
+  current_map_id = getVariable('current_map_id');
+  
   setVariable('select_temp', 1);
   if (getVariable('stopnow') == 1) {
     setVariable('stopnow', 0)

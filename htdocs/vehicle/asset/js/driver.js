@@ -280,7 +280,7 @@ function setMaps() {
   current_map_id = getVariable('current_map_id')
   Object.keys(maps).forEach(function (key) {
     if (key == current_map_id) {
-      $('#selectcontaier').append('<div class="select float" id="current_location"　onclick="changeMap('+ key+')">'+ maps[key] +'</div>')
+      $('#selectcontaier').append('<div class="select float" onclick="changeMap('+ key+')">'+ maps[key] +'</div>')
     } else {
       $('#selectcontaier').append('<div class="select float" onclick="changeMap('+ key+')">'+ maps[key] +'</div>')
     }

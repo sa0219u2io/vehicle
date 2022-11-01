@@ -37,6 +37,14 @@ function req_move(destid) {
   sendAPI(data)
 }
 
+//現在MAP取得
+function get_map_data() {
+  data = {	
+    "type":"get_map_data"
+  }	
+  sendAPI(data)
+}
+
 //移動開始
 function req_relocate(destid) {
   another_route = parseInt(getVariable("another_route"));
@@ -224,6 +232,10 @@ function getResponseObserver(res) {
   //走行状態取得
   case ("get_move_status") :
     callback_GMS(res)
+    break
+  //現在マップ取得
+  case ("get_map_data") :
+    callback_GMD(res)
     break
   //センサデータ情報取得指示
   case ("get_sensor_data") :
