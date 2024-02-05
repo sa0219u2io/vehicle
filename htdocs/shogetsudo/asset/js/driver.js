@@ -41,6 +41,7 @@ function readJson(type, number) {
   var url=webroot+appname+'/asset/json/'+type+'.json';
   setLog(0,type);
   setLog(0,number);
+  var res;
   $.getJSON(url, (data) => {
     //console.log(data);
     if (number === "99") {
@@ -57,32 +58,33 @@ function readJson(type, number) {
           viewMapCallback(response);
         break
         case("wakeup"):
-          viewAnnounce(type, respone);
+          viewAnnounce(type, response);
         break
         case("select"):
-          viewAnnounce(type, respone);
+          viewAnnounce(type, response);
         break
         case("sequence"):
-        viewAnnounce(type, respone);
+        viewAnnounce(type, response);
         break
         case("halt"):
-        viewAnnounce(type, respone);
+        viewAnnounce(type, response);
         break
         case("complete"):
-        viewAnnounce(type, respone);
+        viewAnnounce(type, response);
         break
         case("relocate"):
-        viewAnnounce(type, respone);
+        viewAnnounce(type, response);
         break
         case("onmove"):
-        viewAnnounce(type, respone);
+        viewAnnounce(type, response);
         break
         case("autostart"):
-        viewAnnounce(type, respone);
+        viewAnnounce(type, response);
         case("turnaround"):
-        viewAnnounce(type, respone);
+        viewAnnounce(type, response);
         break
-        default:
+        case("senario"):
+        viewSenario(type, data);
         break
       }
     } else {
@@ -135,13 +137,19 @@ function readJson(type, number) {
        break
       }
     }
-  });
+  });  
 }
 
 //画面遷移関数
-function transScreen(string) {
+function transScreen(string, param = '') {
   setLog(0, string)
-  window.location.href = webroot+appname+'/'+ string +'.php';
+  setLog(0, param)
+  if (param) {
+    window.location.href = webroot+appname+'/'+ string +'.php?param='+ param
+  } else {
+    window.location.href = webroot+appname+'/'+ string +'.php'
+  }
+  
 }
 
 //変数全消去

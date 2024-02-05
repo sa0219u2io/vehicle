@@ -87,7 +87,7 @@ function callback_GCL (res) {
   return
 }
 
-function callback_GMD (res) {
+function callback_GCM (res) {
   map_id = res.data.map_id;
   setVariable('current_map_id', map_id);
 }

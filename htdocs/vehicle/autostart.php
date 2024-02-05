@@ -63,9 +63,6 @@
           transScreen('select')
         }
 
-        if (hub.includes(current_destination_id)) {
-          transScreen('select')
-        }
         playAnnounce('autostart')
         autostart = getWait('hub')
         setUnderMessage(deslist[nextid[0]]+'へ向かいます(拠点走行)')

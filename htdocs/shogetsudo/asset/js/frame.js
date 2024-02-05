@@ -28,6 +28,10 @@ $(function nav(){
   $('#modal-face-open').click(function(){
     transScreen('face')
   });
+  //目的地選択
+  $('#modal-senario-open').click(function(){
+    transScreen('senario')
+  });
   //単純顔画面
   $('#modal-kiosk-open').click(function(){
     var kiosk = getVariable('kiosk')
@@ -790,6 +794,35 @@ function setHubDest(destination_id) {
 
 //連続走行配列に追加
 function putSequenceArray(destid) {
+  console.log('seq:'+destid)
+  map_id = getVariable('current_map_id')
+  array = getVariable('sequencearray'+map_id)
+  sequencearray = JSON.parse(array)
+  // if (sequencearray[sequencearray.length - 1] == destid) {
+  //   //最後の要素と同じ位置なら
+  //   setUnderMessage('同じ位置を連続して選択することはできません')
+  //   return
+  // }
+
+  sequencearray.push(destid)
+  json = JSON.stringify(sequencearray)
+  setVariable('sequencearray'+map_id, json)
+
+  res = getVariable('dl_all_array')
+  current_map_id = getVariable('current_map_id')
+  deslist = JSON.parse(res)[current_map_id]
+  move_to_name = deslist[destid]
+
+  $('#sequencepannel').append('<div class="sequencepannel">'+move_to_name+'</div>')
+  $('#sequencepannel').append('<div class="sequencearrow">▼</div>')
+
+  // if (sequencearray.length == 2) {
+  //   $('#sequencego').append('<div id="sequencemove" onclick="move(\''+sequencearray[1]+'\')">移動開始</div>')
+  // }
+}
+
+//連続走行配列に追加
+function putSequenceArrayMaking(destid) {
   map_id = getVariable('current_map_id')
   array = getVariable('sequencearray'+map_id)
   sequencearray = JSON.parse(array)
@@ -812,7 +845,7 @@ function putSequenceArray(destid) {
   $('#sequencepannel').append('<div class="sequencearrow">▼</div>')
 
   if (sequencearray.length == 2) {
-    $('#sequencego').append('<div id="sequencemove" onclick="move(\''+sequencearray[1]+'\')">移動開始</div>')
+    $('#sequencego').append('<div id="sequencemove" onclick="setSenario()">確定</div>')
   }
 }
 

@@ -1,4 +1,5 @@
-<?php $main = '<div class="onmoveicon" id="modal-stopnow-open" onclick="stopnow()"><img src="asset/image/pictgram/stopmove_2.png"><p>一時停止</p></div><div id="video"></div>'?>
+<!-- '<div class="onmoveicon" id="modal-stopnow-open" onclick="stopnow()"><img src="asset/image/pictgram/stopmove_2.png"><p>一時停止</p></div><div id="video"></div>' -->
+<?php $main = '<div class="onmovelock" id="video"></div>'?>
 <?php $mainmessage = ''?>
 <?php $undermessage = ''?>
 <?php include('component/template.php'); ?>
@@ -7,17 +8,17 @@
   $('.wrapper').addClass('onmove')
   //setAnnounce('onmove')
   //連続走行なら、自動でムービー再生
-  id = getVariable('current_map_id');
-  array = ['26','62'];
-  console.log(id)
-  console.log(array)
-  result = $.inArray(id,array)
-  console.log(result)
-  if (result>=0) {
+  // id = getVariable('current_map_id');
+  // array = ['26','62'];
+  // console.log(id)
+  // console.log(array)
+  // result = $.inArray(id,array)
+  // console.log(result)
+  // if (result>=0) {
     setOnmoveMovie()
-  } else {
-    setOnmoveAudio()
-  }
+  // } else {
+  //   setOnmoveAudio()
+  // }
   set_current_destination()
   var array = []
   array[0] = '通常走行'

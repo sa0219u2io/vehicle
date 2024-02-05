@@ -16,9 +16,9 @@
       transScreen('map')
     }
     if (map_id > 0) {
-      //setTimeout(function(){req_change_map(map_id)}, 500)
+      setTimeout(function(){req_change_map(map_id)}, 500)
       req_change_map(map_id)
-      //transScreen('select')
+      transScreen('select')
     } else {
      transScreen('map')
     }

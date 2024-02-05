@@ -19,7 +19,7 @@ a:link, a:visited, a:hover, a:active {
 }
 hr {
   margin: 0;
-  margin-bottom: : 10px;
+  margin-bottom: 10px;
 }
 a.widera {
   position: absolute;
@@ -31,13 +31,13 @@ a.widera {
 }
 
 #video {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  /* position: absolute; */
+  /* width: 100%; */
+  /* height: 100%; */
   display: none;
-  top:0;
+  /* top:0;
   left:0;
-  z-index: 998;
+  z-index: 998; */
 }
 
 .video-show {
@@ -298,7 +298,6 @@ menu {
   color: white;
   font-size: 40px;
   text-align: center;
-  vertical-align:middle;
   display: block;
 }
 
@@ -812,4 +811,73 @@ button.resume  {
   position: absolute;
   bottom: 0;
   left:30px;
+}
+
+.onmovelock {
+  z-index: 10001;
+  position: absolute;
+  top:-80px;
+  left:-100px;
+  width:1148px;
+  height:644px;
+  margin: 0;
+  padding: 0 50px;
+}
+
+
+/* シナリオ */
+#senariocontaier {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.senario {
+  margin: 0 5px;
+  flex: 1;
+  height: 100%;
+  background-color:  #FDF6E3;
+  border-radius: 10px;
+  position: relative;
+}
+.senariotittle {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 800;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.senariocontent {
+  font-size: 24px;
+  font-weight: 400;
+}
+.senariodestination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.senarioclickzone {
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: calc(100% - 50px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.senariochange {
+  display: flex;
+  width: 100%;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 800;
+  border-radius: 10px 10px 10px 10px;
+  border : 1px solid white;
+  background-color: #51ADA4;
+  color: white;
 }

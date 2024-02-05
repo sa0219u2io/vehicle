@@ -32,6 +32,8 @@
         <div class="menuicon" id="modal-hub-open"><img src="<?=$url?>hub.png"><p>拠点走行</p></div>
         <!-- 移動モード設定 -->
         <div class="menuicon" id="modal-round-open"><img src="<?=$url?>turnaround.png"><p>巡回走行</p></div>
+        <!-- 移動モード設定 -->
+        <div class="menuicon" id="modal-senario-open"><img src="<?=$url?>turnaround.png"><p>シナリオ設定</p></div>
       </div>
       <div class="menurow">
         <!-- トレース -->

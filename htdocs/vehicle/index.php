@@ -12,7 +12,7 @@
   function checkCurrentMap() {
     map_id = parseInt(getVariable('current_map_id'))
     if (map_id > 0) {
-     transScreen('select')
+     transScreen('map')
     } else {
      transScreen('map')
     }

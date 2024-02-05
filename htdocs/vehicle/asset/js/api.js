@@ -38,9 +38,9 @@ function req_move(destid) {
 }
 
 //現在MAP取得
-function get_map_data() {
+function get_current_map() {
   data = {	
-    "type":"get_map_data"
+    "type":"get_current_map"
   }	
   sendAPI(data)
 }
@@ -234,8 +234,8 @@ function getResponseObserver(res) {
     callback_GMS(res)
     break
   //現在マップ取得
-  case ("get_map_data") :
-    callback_GMD(res)
+  case ("get_current_map") :
+    callback_GCM(res)
     break
   //センサデータ情報取得指示
   case ("get_sensor_data") :

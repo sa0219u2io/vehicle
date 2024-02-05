@@ -1,7 +1,9 @@
-{
-  "type":"get_map_data",
-  "data":{
-    "mapinfo_filepath":"/usr/share/nginx/mapinfo.json",
-    "mapimage_filepath":"debug/floormap.jpg"
-  }
-}
+{			
+	"type":"get_map_data",		
+	"data":{		
+		"map_id" : 6,	
+		"map_name" : "Buddy試験機用マップ3",	
+		"remark" : "マップ備考",	
+		"url" : "http://localhost/_temp/map_info/10"	
+	 }		
+}			

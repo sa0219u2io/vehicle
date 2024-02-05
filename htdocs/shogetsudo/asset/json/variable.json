@@ -30,5 +30,20 @@
     "another_route": 0,
     "kiosk": "on",
     "onmovemovie":0,
-    "sequencearray":"[]"
+    "sequencearray":"[]",
+    "currentsenario" :0,
+    "senario" : [
+      {
+        "name": "朝用巡回",
+        "destination_id_array": ["00001", "00002", "00003"]
+      },
+      {
+        "name": "昼用巡回",
+        "destination_id_array": ["00001"]
+      },
+      {
+        "name": "短間巡回",
+        "destination_id_array": ["00001"]
+      }
+    ]
 }

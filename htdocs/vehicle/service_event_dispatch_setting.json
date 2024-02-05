@@ -77,7 +77,7 @@
       "title": "マップ切り替え完了通知",
       "id": "res_change_map",
       "dispatch_type": "1",
-      "url": "http://localhost/vehicle/index.php"
+      "url": "http://localhost/vehicle/select.php"
     }
   ]
 }

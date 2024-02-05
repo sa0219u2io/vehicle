@@ -2,7 +2,7 @@
 //初期設定
 /////////////////////////////////////////////////////////////////////////////////////////
 //vehicleフォルダ内にて
-//zip -r ../vehicle2-2-9.zip *
+//zip -r ../vehicle1-1-3.zip *
 //debug 0: 本番, 1: デバッグ
 const debug = localStorage.getItem('debug')?1:0;
 const webroot = 'http://localhost/'
@@ -16,7 +16,7 @@ if (debug == 0)  {
   var systemUI = window
 }
 const broadcast = new BroadcastChannel('System')
-const mainversion = appname + '2.2.9' + '('+debug+')'
+const mainversion = appname + '1.1.3' + '('+debug+')'
 
 /////////////////////////////////////////////////////////////////////////////////////////
 //共通イニシャル処理
@@ -30,7 +30,7 @@ function init() {
   resetTemp()
   readZigbee();
   setVariable('log', '再起動');
-  get_map_data();
+  get_current_map();
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////

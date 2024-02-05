@@ -2,7 +2,7 @@
 //初期設定
 /////////////////////////////////////////////////////////////////////////////////////////
 //vehicleフォルダ内にて
-//zip -r ../shogetsudo1-1-13.zip *
+//zip -r ../shogetsudo1-4-3.zip *
 //debug 0: 本番, 1: デバッグ
 const debug = localStorage.getItem('debug')?1:0;
 const webroot = 'http://localhost/'
@@ -16,7 +16,7 @@ if (debug == 0)  {
   var systemUI = window
 }
 const broadcast = new BroadcastChannel('System')
-const mainversion = appname + '1.1.13' + '('+debug+')'
+const mainversion = appname + '1.4.3' + '('+debug+')'
 
 /////////////////////////////////////////////////////////////////////////////////////////
 //共通イニシャル処理
@@ -224,15 +224,89 @@ function set_destination_list_sequence(type) {
   } else {
     array = getVariable('sequencearray'+map_id)
     sequencearray_tmp = JSON.parse(array)
+    // clearSequenceArray(map_id)
+
+    console.log(sequencearray_tmp)
+    currentsenarioname = getVariable('currentsenarioname')
+    if (currentsenarioname) {
+      setMainMessage('シナリオ走行:'+currentsenarioname)
+    }
+    // console.log(sequencearray_tmp)
+    Object.keys(sequencearray_tmp).forEach(function (key) {
+      console.log(key+':'+sequencearray_tmp[key])
+      // putSequenceArray(sequencearray_tmp[key]);
+      res = getVariable('dl_all_array')
+      current_map_id = getVariable('current_map_id')
+      deslist = JSON.parse(res)[current_map_id]
+      // console.log('deslist')
+      // console.log(key)
+      // console.log(deslist)
+      move_to_name = deslist[sequencearray_tmp[key]]
+
+    
+      $('#sequencepannel').append('<div class="sequencepannel">'+move_to_name+'</div>')
+      $('#sequencepannel').append('<div class="sequencearrow">▼</div>')
+    });
+
+    if (sequencearray_tmp.length >= 2) {
+      $('#sequencego').append('<div id="sequencemove" onclick="move(\''+sequencearray_tmp[0]+'\')">移動開始</div>')
+    }
+  }
+  // 松月堂対応・予定シナリオ入力
+}
+
+//目的地一覧を表示
+function set_destination_list_sequence_making(type) {
+  res = getVariable('dl_all_array')
+  if (res) {
+    current_map_id = getVariable('current_map_id')
+    deslist = JSON.parse(res)[current_map_id]
+    if (typeof(deslist)==null) {
+      //目的地リスト取得失敗したらアプリ再起動
+      transScreen('index')
+    }
+  } else {
+    //目的地リスト取得失敗したらアプリ再起動
+    transScreen('index')
+  }
+
+  $("#sequencecontainer").empty();
+  var current_destination_id = getVariable('current_destination_id')
+  //再設置画面なら
+  if (getVariable('onrelocate')==1) {
+    current_destination_id = "";
+  }
+
+  Object.keys(deslist).forEach(function (key) {
+    if (key == current_map_id) {
+      $('#sequencecontainer').append('<div class="sequence float" id="current_location">'+ deslist[key] +'</div>')
+    } else {
+      $('#sequencecontainer').append('<div class="sequence float" onclick="putSequenceArrayMaking(\''+ key+'\')">'+ deslist[key] +'</div>')
+    }
+  });
+  //console.log('212:'+current_destination_id)
+  if (current_destination_id == '') {
+    current_destination_id = getVariable('hub_destination_id')
+    //console.log('214:'+current_destination_id)
+  }
+  map_id = getVariable('current_map_id')
+  //console.log(type)
+  if (type == '1') {
+    clearSequenceArray(map_id);
+    $('#sequencepannel').empty()
+    $('#sequencego').empty()
+    // putSequenceArrayMaking(current_destination_id);
+  } else {
+    array = getVariable('sequencearray'+map_id)
+    sequencearray_tmp = JSON.parse(array)
     clearSequenceArray(map_id)
     console.log(sequencearray_tmp)
     Object.keys(sequencearray_tmp).forEach(function (key) {
       console.log(key+':'+sequencearray_tmp[key])
-      putSequenceArray(sequencearray_tmp[key]);
+      putSequenceArrayMaking(sequencearray_tmp[key]);
     });
   }
-
-
+  // 松月堂対応・予定シナリオ入力
 }
 
 //現在の目的地を表示
@@ -263,7 +337,7 @@ function resetTemp() {
   setVariable('api', "")
   setVariable('sequencearray', "")
   setVariable('roundarray', "")
-  setVariable('sequencei', 1)
+  setVariable('sequencei', 0)
   setVariable('roundi', 1)
   setVariable('sensor_target', "")
   setVariable('onrelocate', 0)
@@ -277,7 +351,7 @@ function clearMoveStatus() {
   setVariable('ontrace', 0)
   setVariable('turnaround', 0)
   setVariable('turnaround_count', 0)
-  setVariable('sequencei', 1)
+  setVariable('sequencei', 0)
   setVariable('roundi', 1)
   setVariable('complete_temp', 0);
   setVariable('select_temp', 0);
