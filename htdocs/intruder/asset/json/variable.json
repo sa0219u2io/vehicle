@@ -1,0 +1,58 @@
+{
+  "current_map": "default",
+  "settings" :{
+    "default" : {
+      "music": "0",
+      "music_volume": "80",
+      "announce" : {
+        "wakeup" : "0",
+        "map" : "0",
+        "select" : "0",
+        "sequence" : "0",
+        "onmove" : "0",
+        "halt" : "0",
+        "face" : "0",
+        "relocate" : "0",
+        "complete" : "0",
+        "autostart" : "0",
+        "turnaround" : "0"
+      },
+      "announce_volume": "100",
+      "message": {
+        "autostart" : "0"
+      },
+      "trip_mode": "normal",
+      "velocity": "100",
+      "turnaround_wait" : "25",
+      "hub" : {
+          "hub" : null,
+          "destination_list" :null,
+          "wait" : "25"
+      },
+      "tolerance" : {
+        "destination_list" :null,
+        "destinations" : null,
+        "tolerance" : "110"
+      },
+      "order" : [],
+      "sequence" : {
+        "destination_list" : [],
+        "wait" : "25"
+      },
+      "senario" : [
+        {
+          "name" : "デフォルト",
+          "destination_list" : null,
+          "wait" : "25"
+        }
+      ],
+      "reserve" : [
+        {
+          "senario_name" : "デフォルト",
+          "time" : "15:00",
+          "enable" : false
+        }
+      ]
+    }
+  }
+}

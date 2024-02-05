@@ -1,0 +1,113 @@
+{
+  "file_id": "SO29",
+  "block_section_list": [
+    {
+      "title": "*****",
+      "id": "info_read_usb_cache",
+      "dispatch_type": "1",
+      "url": "http://localhost/intruder/usbdebug.php"
+    },
+    {
+      "title": "*****",
+      "id": "info_change_map",
+      "dispatch_type": "1",
+      "url": "http://localhost/intruder/index.php"
+    },
+    {
+      "title": "*****",
+      "id": "info_change_map_error",
+      "dispatch_type": "1",
+      "url": "http://localhost/intruder/error.php?error=info_change_map_error"
+    },
+    {
+      "title": "*****",
+      "id": "info_move_start",
+      "dispatch_type": "1",
+      "url": "http://localhost/intruder/onmove.php"
+    },
+    {
+      "title": "*****",
+      "id": "info_move_error",
+      "dispatch_type": "1",
+      "url": "http://localhost/intruder/error.php?error=info_move_error"
+    },
+    {
+      "title": "*****",
+      "id": "info_arrival",
+      "dispatch_type": "1",
+      "url": "http://localhost/intruder/complete.php"
+    },
+    {
+      "title": "*****",
+      "id": "info_motor_cmdexecution_error",
+      "dispatch_type": "1",
+      "url": "http://localhost/intruder/error.php?error=info_motor_cmdexecution_error"
+    },
+    {
+      "title": "*****",
+      "id": "info_motor_trouble_detection",
+      "dispatch_type": "1",
+      "url": "http://localhost/intruder/error.php?error=info_motor_trouble_detection"
+    },
+    {
+      "title": "*****",
+      "id": "info_stop_move",
+      "dispatch_type": "1",
+      "url": "http://localhost/intruder/select.php"
+    },
+    {
+      "title": "*****",
+      "id": "info_stop_move_error",
+      "dispatch_type": "1",
+      "url": "http://localhost/intruder/error.php?error=info_stop_move_error"
+    },
+    {
+      "title": "*****",
+      "id": "info_motor_collision_detection",
+      "dispatch_type": "1",
+      "url": "http://localhost/intruder/select.php"
+    },
+    {
+      "title": "*****",
+      "id": "info_obstacle_detection",
+      "dispatch_type": "1",
+      "url": "http://localhost/intruder/error.php?error=move_failed"
+    },
+    {
+      "title": "*****",
+      "id": "info_restart_move_error",
+      "dispatch_type": "1",
+      "url": "http://localhost/intruder/error.php?error=info_restart_move_error"
+    },
+    {
+      "title": "*****",
+      "id": "info_set_location",
+      "dispatch_type": "1",
+      "url": "http://localhost/intruder/select.php"
+    },
+    {
+      "title": "*****",
+      "id": "info_set_location_error",
+      "dispatch_type": "1",
+      "url": "http://localhost/intruder/error.php?error=info_set_location_error"
+    },
+    {
+      "title": "*****",
+      "id": "info_move_ready",
+      "dispatch_type": "1",
+      "url": "http://localhost/intruder/select.php?error=info_move_ready"
+    },
+    {
+      "title": "*****",
+      "id": "info_halt",
+      "dispatch_type": "1",
+      "url": "http://localhost/intruder/halt.php"
+    },
+    {
+      "title": "*****",
+      "id": "info_restart_move",
+      "dispatch_type": "1",
+      "url": "http://localhost/intruder/onmove.php"
+    }
+  ]
+}

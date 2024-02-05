@@ -1,0 +1,52 @@
+{					
+	"type":"get_system_data",				
+	"data":{				
+		"volume_system_level":80,			
+		"volume_app_level":60,			
+		"wifi_ssid":"XXXXXXXXXX",			
+		"md_status":2,			
+		"battery_remain":75,			
+		"battery_status":0,			
+		"battery_info":0,			
+		"ids":[			
+				{	"id":"1",
+					"detection_range_start":30,
+					"detection_range_end":80
+				},	
+				{	"id":"2",
+					"detection_range_start":30,
+					"detection_range_end":80
+				},
+        {	"id":"3",
+					"detection_range_start":30,
+					"detection_range_end":80
+				},
+        {	"id":"4",
+					"detection_range_start":30,
+					"detection_range_end":80
+				},
+        {	"id":"5",
+					"detection_range_start":30,
+					"detection_range_end":80
+				},	
+				{	"id":"6",
+					"detection_range_start":30,
+					"detection_range_end":80
+				},
+        {	"id":"7",
+					"detection_range_start":30,
+					"detection_range_end":80
+				},
+        {	"id":"8",
+					"detection_range_start":30,
+					"detection_range_end":80
+				}	
+			],		
+		"uls":[			
+			{		
+			"detection_range_start":30,		
+			"detection_range_end":80		
+			}		
+		]			
+	}				
+}					

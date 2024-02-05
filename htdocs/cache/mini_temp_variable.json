@@ -1,0 +1,14 @@
+{
+    "current_map_id": "1",
+    "hub_destination_id": "[[\"00001\"],[],null,null,null,null,[\"00001\"]]",
+    "sequence_destination_id": "00001",
+    "velocity": "100",
+    "music_volume": "80",
+    "music": "0",
+    "announce_volume": "100",
+    "announce": "{\"wakeup\":\"0\",\"map\":\"0\",\"select\":\"0\",\"sequence\":\"0\",\"onmove\":\"0\",\"halt\":\"0\",\"face\":\"0\",\"relocate\":\"0\",\"complete\":\"0\",\"autostart\":\"0\",\"turnaround\":\"0\"}",
+    "wait": "{\"complete\":\"6\",\"turnaround\":\"25\",\"sequence\":\"25\",\"hub\":\"6\",\"round\":\"6\"}",
+    "trip_mode": "0",
+    "another_route": "0",
+    "kiosk": "on"
+}

@@ -1,0 +1,8 @@
+{
+  "type":"req_move_status_reset",
+  "data":{
+    "result_cd":"0",
+    "error_cd":"",
+    "error_msg":""
+  }
+}

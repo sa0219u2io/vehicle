@@ -1,0 +1,8 @@
+{
+  "type":"req_usb_command",
+  "data":{
+    "result_cd":"0",
+    "error_cd":"",
+    "error_msg":""
+  }
+}

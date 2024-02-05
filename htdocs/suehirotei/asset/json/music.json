@@ -1,0 +1,46 @@
+[
+  {
+    "name": "天使の夢",
+    "audio": "http://localhost/_temp/music/tenshinoyume.mp3"
+  },
+  {
+    "name": "誕生日",
+    "audio": "http://localhost/_temp/music/Happy Birthday.mp3"
+  },
+  {
+    "name": "ジングルベル",
+    "audio": "http://localhost/_temp/music/jingle-bells-11295.mp3"
+  },
+  {
+    "name": "午前二時の噴水",
+    "audio": "http://localhost/_temp/music/gozennijinofunsui.mp3"
+  },
+  {
+    "name": "Birth",
+    "audio": "http://localhost/_temp/music/birth.mp3"
+  },
+  {
+    "name": "G線上のアリア",
+    "audio": "http://localhost/_temp/music/AirG.mp3"
+  },
+  {
+    "name": "威風堂々",
+    "audio": "http://localhost/_temp/music/Elgar.mp3"
+  },
+  {
+    "name": "カノン",
+    "audio": "http://localhost/_temp/music/Canon.mp3"
+  },
+  {
+    "name": "魔王魂ヒーリング17",
+    "audio": "http://localhost/_temp/music/bgm_maoudamashii_healing17.mp3"
+  },
+  {
+    "name": "バッハ・無伴奏チェロ組曲",
+    "audio": "http://localhost/_temp/music/CelloSuite.mp3"
+  },
+  {
+    "name": "凱旋行進曲",
+    "audio": "http://localhost/_temp/music/gaisen.mp3"
+  }
+]

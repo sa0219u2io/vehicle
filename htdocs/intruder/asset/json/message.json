@@ -1,0 +1,14 @@
+{
+  "autostart": [
+    {
+      "name": "へ送ります",
+      "prefix": "destination_name",
+      "suffix": ""
+    },
+    {
+      "name": "ホーム",
+      "prefix": "",
+      "suffix": ""
+    }
+  ]
+}

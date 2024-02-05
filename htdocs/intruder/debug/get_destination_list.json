@@ -1,0 +1,107 @@
+{
+  "type":"get_destination_list",
+  "data":{
+    "map_list":[
+    	{
+    		"map_id":1,
+    		"map_name":"Buddy試験機用マップ3",
+    		"destination_list":[
+    			{
+      			"destination_id":"00001",
+      			"destination_mark_index":1,
+      			"destination_name":"厨房A",
+      			"disp_order":1.0,
+      			"stop_angle":180.0,
+      			"point_x":1,
+      			"point_y":2,
+      			"is_start": 1,
+      			"remark":"2Fスワップポイント"
+    			},
+    			{
+      			"destination_id":"00002",
+      			"destination_mark_index":2,
+      			"destination_name":"調理室",
+      			"disp_order":2.0,
+      			"stop_angle":180.0,
+      			"point_x":1,
+      			"point_y":3,
+      			"is_start": 0,
+      			"remark":""
+          },
+          {
+      			"destination_id":"00003",
+      			"destination_mark_index":3,
+      			"destination_name":"洗濯室",
+      			"disp_order":1.0,
+      			"stop_angle":180.0,
+      			"point_x":1,
+      			"point_y":2,
+      			"is_start": 0,
+      			"remark":"2Fスワップポイント"
+    			},
+    			{
+      			"destination_id":"00004",
+      			"destination_mark_index":4,
+      			"destination_name":"１卓",
+      			"disp_order":2.0,
+      			"stop_angle":180.0,
+      			"point_x":1,
+      			"point_y":3,
+      			"is_start": 0,
+      			"remark":""
+    			}
+    		]
+    	},
+      {
+    		"map_id":6,
+    		"map_name":"Buddy試験機用マップ4",
+    		"destination_list":[
+    			{
+      			"destination_id":"00001",
+      			"destination_mark_index":1,
+      			"destination_name":"厨房",
+      			"disp_order":1.0,
+      			"stop_angle":180.0,
+      			"point_x":1,
+      			"point_y":2,
+      			"is_start": 1,
+      			"remark":"2Fスワップポイント"
+    			},
+    			{
+      			"destination_id":"00002",
+      			"destination_mark_index":2,
+      			"destination_name":"Room1",
+      			"disp_order":2.0,
+      			"stop_angle":180.0,
+      			"point_x":1,
+      			"point_y":3,
+      			"is_start": 0,
+      			"remark":""
+          },
+          {
+      			"destination_id":"00003",
+      			"destination_mark_index":3,
+      			"destination_name":"Room2",
+      			"disp_order":1.0,
+      			"stop_angle":180.0,
+      			"point_x":1,
+      			"point_y":2,
+      			"is_start": 0,
+      			"remark":"2Fスワップポイント"
+    			},
+    			{
+      			"destination_id":"00004",
+      			"destination_mark_index":4,
+      			"destination_name":"Room3",
+      			"disp_order":2.0,
+      			"stop_angle":180.0,
+      			"point_x":1,
+      			"point_y":3,
+      			"is_start": 0,
+      			"remark":""
+    			}
+    		]
+    	}
+    ]
+  }
+}

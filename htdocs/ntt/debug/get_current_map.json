@@ -1,0 +1,50 @@
+{
+	"type":"get_current_map",
+	"result": {
+		"result_cd":"0",
+		"error_cd":"",
+		"error_msg":""
+	},
+	"data":{
+		"map_name":"test"	,
+		"is_set":1,
+		"remark":"",
+		"destnation_list":	[
+			{
+				"destination_name": "スタート",
+				"disp_order": 0,
+				"point" : {
+					"point_x" : 1,
+					"point_y" : 1,
+					"point_z" : 1
+				},
+				"stop_angle": {
+					"point_x": 1,
+					"point_y": 1,
+					"point_z": 1,
+					"point_w":1
+				},		
+				"is_start": 0,
+				"remark": ""
+			},
+			{
+				"destination_name": "ゴール",
+				"disp_order": 0,
+				"point" : {
+					"point_x" : 1,
+					"point_y" : 1,
+					"point_z" : 1
+				},
+				"stop_angle": {
+					"point_x": 1,
+					"point_y": 1,
+					"point_z": 1,
+					"point_w":1
+				},		
+				"is_start": 0,
+				"remark": ""
+			}
+		]
+	}
+}
+	

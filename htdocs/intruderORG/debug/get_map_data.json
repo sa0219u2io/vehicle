@@ -1,0 +1,7 @@
+{
+  "type":"get_map_data",
+  "data":{
+    "mapinfo_filepath":"/usr/share/nginx/mapinfo.json",
+    "mapimage_filepath":"debug/floormap.jpg"
+  }
+}

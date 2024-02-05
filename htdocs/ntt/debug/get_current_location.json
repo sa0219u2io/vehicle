@@ -1,0 +1,18 @@
+{
+	"type":"get_current_location",
+	"data":{
+		"map_name": "test",
+		"destination_name": "goal",
+		"point": {
+			"point_x":56.5,
+			"point_y":11.2,
+			"point_z":0
+		},
+		"stop_angle": {
+			"point_x":0,
+			"point_y":0,
+			"point_z":0,
+			"point_w":62.5
+		}
+	}
+}
