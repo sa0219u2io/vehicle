@@ -1,0 +1,24 @@
+{
+    "settings": {
+        "test3": {
+            "multiple": "{\"count\":0,\"myip\":\"192.168.11.31\",\"mynumber\":0,\"iplist\":[\"192.168.11.44\"],\"hublist\":[\"退避場所\"],\"exceptionlist\":[\"A\",\"B\"],\"avoidance\":\"拠点\"}",
+            "music": "0",
+            "music_volume": "80",
+            "announce": "{\"wakeup\":\"2\",\"map\":\"0\",\"select\":\"0\",\"sequence\":\"0\",\"onmove\":\"0\",\"moving\":\"0\",\"halt\":\"0\",\"face\":\"0\",\"relocate\":\"0\",\"complete\":\"0\",\"autostart\":\"0\",\"turnaround\":\"0\"}",
+            "announce_volume": "100",
+            "message": "{\"sequence\":\"0\",\"hub\":\"0\",\"senario\":\"0\",\"complete\":\"0\",\"autostart\":\"0\",\"turnaround\":\"0\"}",
+            "trip_mode": "normal",
+            "velocity": "100",
+            "turnaround": "{\"number\":50,\"wait\":25}",
+            "hub": "{\"hub\":\"拠点\",\"destination_settings\":[\"退避場所\"],\"wait\":\"200\"}",
+            "tolerance": "{\"destination_settings\":{\"A\":\"170\",\"B\":\"110\",\"C\":\"110\",\"D\":\"110\",\"拠点\":\"110\",\"退避場所\":\"110\"},\"default\":\"110\"}",
+            "charge_spot": "充電場所",
+            "order": "[\"拠点\",\"A\",\"B\",\"D\",\"C\",\"退避場所\"]",
+            "sequence": "{\"destination_settings\":[],\"wait\":\"25\"}",
+            "senario": "[{\"name\":\"default\",\"destination_settings\":[],\"wait\":\"25\"},{\"name\":\"説明用\",\"destination_settings\":[\"B\",\"C\",\"退避場所\",\"D\",\"拠点\"],\"wait\":\"25\"}]",
+            "reserve": "[{\"senario_number\":0,\"senario_name\":\"default\",\"time\":\"15:00\",\"enable\":false},{\"senario_number\":\"1\",\"senario_name\":\"説明用\",\"time\":\"1230\",\"enable\":true}]",
+            "battery": "{\"alert\":20,\"warning\":10,\"status\":0,\"level\":50}",
+            "multiple_flg": "false"
+        }
+    }
+}

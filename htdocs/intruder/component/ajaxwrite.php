@@ -12,7 +12,10 @@
     touch($filename);
     chmod($filename, 0777);
   }
-  $string = json_encode($list);
+  $variable = json_decode(file_get_contents($filename), true);
+  $newlist = $list['settings'][$list['current_map']];
+  $variable['settings'][$list['current_map']] = $newlist;
+  $string = json_encode($variable, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
   echo($string);
   file_put_contents($filename, $string);
   return;

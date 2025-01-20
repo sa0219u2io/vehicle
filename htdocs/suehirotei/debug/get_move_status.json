@@ -1,6 +1,0 @@
-{
-  "type":"get_move_status",
-  "data":{
-    "move_status":"0"
-  }
-}

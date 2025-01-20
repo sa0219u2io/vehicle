@@ -1,0 +1,185 @@
+{
+  "type" : "get_map_list",
+  "result": {
+    "result_cd": 0,
+    "error_cd": 0,
+    "error_msg": "エラー"
+  },
+  "data": {
+    "map_list": [
+      {
+        "map_name": "test",
+        "current_map_flg": 0,
+        "remark": "1F",
+        "destination_list": [
+          {
+            "destination_name": "充電場所",
+            "disp_order" : 0,
+            "is_start": "ON",
+            "remark": "付加情報"
+          },
+          {
+            "destination_name": "厨房",
+            "disp_order" : 0,
+            "is_start": "OFF",
+            "remark": "付加情報"
+          },
+          {
+            "destination_name": "TBL1",
+            "disp_order" : 0,
+            "is_start": "OFF",
+            "remark": "付加情報"
+          },
+          {
+            "destination_name": "TBL2",
+            "disp_order" : 0,
+            "is_start": "OFF",
+            "remark": "付加情報"
+          },
+          {
+            "destination_name": "ゴール",
+            "disp_order" : 0,
+            "is_start": "OFF",
+            "remark": "付加情報"
+          }
+        ]
+      },
+      {
+        "map_name": "test2",
+        "current_map_flg": 0,
+        "remark": "1F",
+        "destination_list": [
+          {
+            "destination_name": "厨房2",
+            "disp_order" : 0,
+            "is_start": "ON",
+            "remark": "付加情報"
+          },
+          {
+            "destination_name": "ゴール2",
+            "disp_order" : 0,
+            "is_start": "OFF",
+            "remark": "付加情報"
+          }
+        ]
+      },
+      {
+        "map_name": "test3",
+        "current_map_flg": 1,
+        "remark": "1F",
+        "destination_list": [
+          {
+            "destination_name": "A",
+            "disp_order" : 0,
+            "is_start": "ON",
+            "remark": "付加情報"
+          },
+          {
+            "destination_name": "B",
+            "disp_order" : 0,
+            "is_start": "ON",
+            "remark": "付加情報"
+          },
+          {
+            "destination_name": "C",
+            "disp_order" : 0,
+            "is_start": "ON",
+            "remark": "付加情報"
+          },
+          {
+            "destination_name": "D",
+            "disp_order" : 0,
+            "is_start": "OFF",
+            "remark": "付加情報"
+          },
+          {
+            "destination_name": "拠点",
+            "disp_order" : 0,
+            "is_start": "OFF",
+            "remark": "付加情報"
+          },
+          {
+            "destination_name": "退避場所",
+            "disp_order" : 0,
+            "is_start": "OFF",
+            "remark": "付加情報"
+          }
+        ]
+      },
+      {
+        "map_name": "test4",
+        "current_map_flg": 0,
+        "remark": "1F",
+        "destination_list": [
+          {
+            "destination_name": "厨房",
+            "disp_order" : 0,
+            "is_start": "ON",
+            "remark": "付加情報"
+          },
+          {
+            "destination_name": "TBL1",
+            "disp_order" : 0,
+            "is_start": "ON",
+            "remark": "付加情報"
+          },
+          {
+            "destination_name": "TBL2",
+            "disp_order" : 0,
+            "is_start": "ON",
+            "remark": "付加情報"
+          },
+          {
+            "destination_name": "ゴール",
+            "disp_order" : 0,
+            "is_start": "OFF",
+            "remark": "付加情報"
+          }
+        ]
+      },
+      {
+        "map_name": "test5",
+        "current_map_flg": 0,
+        "remark": "1F",
+        "destination_list": [
+          {
+            "destination_name": "左",
+            "disp_order" : 0,
+            "is_start": "ON",
+            "remark": "付加情報"
+          },
+          {
+            "destination_name": "右",
+            "disp_order" : 0,
+            "is_start": "ON",
+            "remark": "付加情報"
+          },
+          {
+            "destination_name": "TMU",
+            "disp_order" : 0,
+            "is_start": "ON",
+            "remark": "付加情報"
+          },
+          {
+            "destination_name": "Center",
+            "disp_order" : 0,
+            "is_start": "OFF",
+            "remark": "付加情報"
+          },
+          {
+            "destination_name": "奥",
+            "disp_order" : 0,
+            "is_start": "OFF",
+            "remark": "付加情報"
+          },
+          {
+            "destination_name": "LOMBY",
+            "disp_order" : 0,
+            "is_start": "OFF",
+            "remark": "付加情報"
+          }
+        ]
+      }
+    ]
+  } 
+}

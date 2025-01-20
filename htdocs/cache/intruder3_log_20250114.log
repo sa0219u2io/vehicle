@@ -1,0 +1,281 @@
+[02:10:14.796]{"page_int":"index"}
+[02:10:19.862]{"init":"intruder3.3.3(debug)"}
+[02:10:19.867]{"resetStatus":"ステータス消去"}
+[02:10:19.869]{"resetWork":"ステータス消去"}
+[02:10:19.878]{"sendAPI":{"type":"get_map_list"}}
+[02:10:19.934]{"scanVariable":"test3"}
+[02:10:20.004]{"_scanVariable":{"settings":{"test3":{"multiple":"{\"count\":0,\"myip\":\"192.168.11.31\",\"mynumber\":0,\"iplist\":[\"192.168.11.44\"],\"hublist\":[\"退避場所\"],\"exceptionlist\":[\"A\",\"B\"],\"avoidance\":\"拠点\"}","music":"0","music_volume":"80","announce":"{\"wakeup\":\"0\",\"map\":\"0\",\"select\":\"0\",\"sequence\":\"0\",\"onmove\":\"0\",\"moving\":\"0\",\"halt\":\"0\",\"face\":\"0\",\"relocate\":\"0\",\"complete\":\"0\",\"autostart\":\"0\",\"turnaround\":\"0\"}","announce_volume":"100","message":"{\"sequence\":\"0\",\"hub\":\"0\",\"senario\":\"0\",\"complete\":\"0\",\"autostart\":\"0\",\"turnaround\":\"0\"}","trip_mode":"hub","velocity":"100","turnaround":"{\"number\":0,\"wait\":25}","hub":"{\"hub\":\"拠点\",\"destination_settings\":[\"退避場所\"],\"wait\":\"200\"}","tolerance":"{\"destination_settings\":{\"A\":\"110\",\"B\":\"110\",\"C\":\"110\",\"D\":\"110\",\"拠点\":\"110\",\"退避場所\":\"110\"},\"default\":\"110\"}","charge_spot":"充電場所","order":"[\"A\",\"B\",\"C\",\"D\",\"拠点\",\"退避場所\"]","sequence":"{\"destination_settings\":[],\"wait\":\"25\"}","senario":"[{\"name\":\"default\",\"destination_settings\":[],\"wait\":\"25\"}]","reserve":"[{\"senario_number\":0,\"senario_name\":\"default\",\"time\":\"15:00\",\"enable\":false}]","battery":"{\"alert\":20,\"warning\":10,\"status\":0,\"level\":90}","multiple_flg":"true"}}}}
+[02:10:21.194]{"playAnnounce":"http://localhost/intruder3/asset/announce/001_20240107.wav"}
+[02:10:24.957]{"initDestinationListTorelance":{"A":"110","B":"110","C":"110","D":"110","拠点":"110","退避場所":"110"}}
+[02:10:25.091]{"initMeMultiple":"http://localhost/intruder3/component/initmultiple.php"}
+[02:10:25.120]{"operatedFlg":"operatedFlg:false"}
+[02:10:25.133]{"transScreen":"select"}
+[02:10:25.308]{"page_int":"select"}
+[02:10:25.334]{"sendAPI":{"type":"get_current_location"}}
+[02:10:25.337]{"viewDestinationList":["A","B","C","D","拠点","退避場所"]}
+[02:10:25.339]{"resetStatus":"ステータス消去"}
+[02:10:25.365]{"playAnnounce":"http://localhost/intruder3/asset/announce/005_20240107.wav"}
+[02:10:31.572]{"writeVariable":"設定保存開始"}
+[02:10:31.645]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:10:31.740]{"writeVariable":"設定保存開始"}
+[02:10:31.805]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:11:56.201]{"transScreen":"sequence"}
+[02:11:56.482]{"page_int":"sequence"}
+[02:11:56.507]{"viewDestinationList":["A","B","C","D","拠点","退避場所"]}
+[02:11:56.520]{"playAnnounce":"http://localhost/intruder3/asset/announce/008_20240107.wav"}
+[02:12:03.233]{"transScreen":"senario"}
+[02:12:03.397]{"page_int":"senario"}
+[02:12:03.424]{"sendAPI":{"type":"get_current_location"}}
+[02:12:03.424]{"resetStatus":"ステータス消去"}
+[02:12:19.644]{"writeVariable":"設定保存開始"}
+[02:12:19.725]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:12:19.801]{"writeVariable":"設定保存開始"}
+[02:12:19.865]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:12:26.467]{"transScreen":"select"}
+[02:12:26.494]{"writeVariable":"設定保存開始"}
+[02:12:26.574]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:12:26.729]{"page_int":"select"}
+[02:12:26.752]{"viewDestinationList":["A","B","C","D","拠点","退避場所"]}
+[02:12:26.753]{"sendAPI":{"type":"get_current_location"}}
+[02:12:26.753]{"resetStatus":"ステータス消去"}
+[02:12:26.768]{"playAnnounce":"http://localhost/intruder3/asset/announce/005_20240107.wav"}
+[02:12:42.838]{"transScreen":"select"}
+[02:12:42.868]{"writeVariable":"設定保存開始"}
+[02:12:42.935]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:12:43.116]{"page_int":"select"}
+[02:12:43.134]{"sendAPI":{"type":"get_current_location"}}
+[02:12:43.137]{"viewDestinationList":["A","B","C","D","拠点","退避場所"]}
+[02:12:43.142]{"resetStatus":"ステータス消去"}
+[02:12:43.158]{"playAnnounce":"http://localhost/intruder3/asset/announce/005_20240107.wav"}
+[02:12:58.621]{"transScreen":"select"}
+[02:12:58.663]{"writeVariable":"設定保存開始"}
+[02:12:58.736]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:12:58.930]{"page_int":"select"}
+[02:12:58.949]{"transScreen":"sequence"}
+[02:12:59.040]{"page_int":"sequence"}
+[02:12:59.054]{"sendAPI":{"type":"get_current_location"}}
+[02:12:59.062]{"resetStatus":"ステータス消去"}
+[02:12:59.072]{"viewDestinationList":["A","B","C","D","拠点","退避場所"]}
+[02:12:59.078]{"playAnnounce":"http://localhost/intruder3/asset/announce/008_20240107.wav"}
+[02:13:15.769]{"transScreen":"select"}
+[02:13:15.812]{"writeVariable":"設定保存開始"}
+[02:13:15.894]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:13:16.116]{"page_int":"select"}
+[02:13:16.137]{"sendAPI":{"type":"get_current_location"}}
+[02:13:16.139]{"viewDestinationList":["A","B","C","D","拠点","退避場所"]}
+[02:13:16.145]{"resetStatus":"ステータス消去"}
+[02:13:16.160]{"playAnnounce":"http://localhost/intruder3/asset/announce/005_20240107.wav"}
+[02:13:35.215]{"viewAnnounce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"}}
+[02:13:39.971]{"writeVariable":"設定保存開始"}
+[02:13:40.034]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:13:40.096]{"writeVariable":"設定保存開始"}
+[02:13:40.153]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:13:41.794]{"viewMusic":[{"name":"天使の夢","audio":"http://localhost/_temp/music/tenshinoyume.mp3"},{"name":"誕生日","audio":"http://localhost/_temp/music/Happy Birthday.mp3"},{"name":"ジングルベル","audio":"http://localhost/_temp/music/jingle-bells-11295.mp3"},{"name":"午前二時の噴水","audio":"http://localhost/_temp/music/gozennijinofunsui.mp3"},{"name":"Birth","audio":"http://localhost/_temp/music/birth.mp3"},{"name":"G線上のアリア","audio":"http://localhost/_temp/music/AirG.mp3"},{"name":"威風堂々","audio":"http://localhost/_temp/music/Elgar.mp3"},{"name":"カノン","audio":"http://localhost/_temp/music/Canon.mp3"},{"name":"魔王魂ヒーリング17","audio":"http://localhost/_temp/music/bgm_maoudamashii_healing17.mp3"},{"name":"バッハ・無伴奏チェロ組曲","audio":"http://localhost/_temp/music/CelloSuite.mp3"},{"name":"凱旋行進曲","audio":"http://localhost/_temp/music/gaisen.mp3"}]}
+[02:13:43.977]{"writeVariable":"設定保存開始"}
+[02:13:44.054]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:13:44.125]{"writeVariable":"設定保存開始"}
+[02:13:44.205]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:13:53.161]{"transScreen":"map"}
+[02:13:53.422]{"page_int":"map"}
+[02:13:53.441]{"sendAPI":{"type":"get_map_list"}}
+[02:13:53.472]{"scanVariable":"test3"}
+[02:13:53.545]{"_scanVariable":{"settings":{"test3":{"multiple":"{\"count\":0,\"myip\":\"192.168.11.31\",\"mynumber\":0,\"iplist\":[\"192.168.11.44\"],\"hublist\":[\"退避場所\"],\"exceptionlist\":[\"A\",\"B\"],\"avoidance\":\"拠点\"}","music":"0","music_volume":"80","announce":"{\"wakeup\":\"0\",\"map\":\"0\",\"select\":\"0\",\"sequence\":\"0\",\"onmove\":\"0\",\"moving\":\"0\",\"halt\":\"0\",\"face\":\"0\",\"relocate\":\"0\",\"complete\":\"0\",\"autostart\":\"0\",\"turnaround\":\"0\"}","announce_volume":"100","message":"{\"sequence\":\"0\",\"hub\":\"0\",\"senario\":\"0\",\"complete\":\"0\",\"autostart\":\"0\",\"turnaround\":\"0\"}","trip_mode":"hub","velocity":"100","turnaround":"{\"number\":50,\"wait\":25}","hub":"{\"hub\":\"拠点\",\"destination_settings\":[\"退避場所\"],\"wait\":\"200\"}","tolerance":"{\"destination_settings\":{\"A\":\"110\",\"B\":\"110\",\"C\":\"110\",\"D\":\"110\",\"拠点\":\"110\",\"退避場所\":\"110\"},\"default\":\"110\"}","charge_spot":"充電場所","order":"[\"A\",\"B\",\"C\",\"D\",\"拠点\",\"退避場所\"]","sequence":"{\"destination_settings\":[],\"wait\":\"25\"}","senario":"[{\"name\":\"default\",\"destination_settings\":[],\"wait\":\"25\"},{\"name\":\"説明用\",\"destination_settings\":[\"B\",\"C\",\"退避場所\",\"D\",\"拠点\"],\"wait\":\"25\"}]","reserve":"[{\"senario_number\":0,\"senario_name\":\"default\",\"time\":\"15:00\",\"enable\":false},{\"senario_number\":\"1\",\"senario_name\":\"説明用\",\"time\":\"1230\",\"enable\":true}]","battery":"{\"alert\":20,\"warning\":10,\"status\":0,\"level\":90}","multiple_flg":"true"}}}}
+[02:13:54.735]{"playAnnounce":"http://localhost/intruder3/asset/announce/004_20240107.wav"}
+[02:14:18.970]{"writeVariable":"設定保存開始"}
+[02:14:19.035]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:14:19.118]{"writeVariable":"設定保存開始"}
+[02:14:19.204]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:14:23.710]{"transScreen":"debug"}
+[02:14:32.181]{"writeVariable":"設定保存開始"}
+[02:14:32.245]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:14:32.318]{"writeVariable":"設定保存開始"}
+[02:14:32.394]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:25:59.371]{"transScreen":"index"}
+[02:25:59.550]{"page_int":"index"}
+[02:26:04.593]{"init":"intruder3.3.3(debug)"}
+[02:26:04.601]{"resetStatus":"ステータス消去"}
+[02:26:04.606]{"resetWork":"ステータス消去"}
+[02:26:04.616]{"sendAPI":{"type":"get_map_list"}}
+[02:26:04.694]{"scanVariable":"test3"}
+[02:26:04.765]{"_scanVariable":{"settings":{"test3":{"multiple":"{\"count\":0,\"myip\":\"192.168.11.31\",\"mynumber\":0,\"iplist\":[\"192.168.11.44\"],\"hublist\":[\"退避場所\"],\"exceptionlist\":[\"A\",\"B\"],\"avoidance\":\"拠点\"}","music":"0","music_volume":"80","announce":"{\"wakeup\":\"0\",\"map\":\"0\",\"select\":\"0\",\"sequence\":\"0\",\"onmove\":\"0\",\"moving\":\"0\",\"halt\":\"0\",\"face\":\"0\",\"relocate\":\"0\",\"complete\":\"0\",\"autostart\":\"0\",\"turnaround\":\"0\"}","announce_volume":"100","message":"{\"sequence\":\"0\",\"hub\":\"0\",\"senario\":\"0\",\"complete\":\"0\",\"autostart\":\"0\",\"turnaround\":\"0\"}","trip_mode":"hub","velocity":"100","turnaround":"{\"number\":50,\"wait\":25}","hub":"{\"hub\":\"拠点\",\"destination_settings\":[\"退避場所\"],\"wait\":\"200\"}","tolerance":"{\"destination_settings\":{\"A\":\"110\",\"B\":\"110\",\"C\":\"110\",\"D\":\"110\",\"拠点\":\"110\",\"退避場所\":\"110\"},\"default\":\"110\"}","charge_spot":"充電場所","order":"[\"A\",\"B\",\"D\",\"C\",\"拠点\",\"退避場所\"]","sequence":"{\"destination_settings\":[],\"wait\":\"25\"}","senario":"[{\"name\":\"default\",\"destination_settings\":[],\"wait\":\"25\"},{\"name\":\"説明用\",\"destination_settings\":[\"B\",\"C\",\"退避場所\",\"D\",\"拠点\"],\"wait\":\"25\"}]","reserve":"[{\"senario_number\":0,\"senario_name\":\"default\",\"time\":\"15:00\",\"enable\":false},{\"senario_number\":\"1\",\"senario_name\":\"説明用\",\"time\":\"1230\",\"enable\":true}]","battery":"{\"alert\":20,\"warning\":10,\"status\":0,\"level\":90}","multiple_flg":"true"}}}}
+[02:26:05.972]{"playAnnounce":"http://localhost/intruder3/asset/announce/001_20240107.wav"}
+[02:26:09.715]{"initDestinationListTorelance":{"A":"110","B":"110","C":"110","D":"110","拠点":"110","退避場所":"110"}}
+[02:26:09.867]{"initMeMultiple":"http://localhost/intruder3/component/initmultiple.php"}
+[02:26:09.887]{"operatedFlg":"operatedFlg:false"}
+[02:26:09.896]{"transScreen":"select"}
+[02:26:10.013]{"page_int":"select"}
+[02:26:10.040]{"sendAPI":{"type":"get_current_location"}}
+[02:26:10.044]{"viewDestinationList":["A","B","D","C","拠点","退避場所"]}
+[02:26:10.046]{"resetStatus":"ステータス消去"}
+[02:26:10.067]{"playAnnounce":"http://localhost/intruder3/asset/announce/005_20240107.wav"}
+[02:43:05.598]{"writeVariable":"設定保存開始"}
+[02:43:05.666]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:43:05.737]{"writeVariable":"設定保存開始"}
+[02:43:05.805]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:44:07.316]{"writeVariable":"設定保存開始"}
+[02:44:07.384]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:44:07.460]{"writeVariable":"設定保存開始"}
+[02:44:07.527]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:44:14.797]{"makeWork":{"cutin":"false"}}
+[02:44:27.249]{"writeVariable":"設定保存開始"}
+[02:44:27.325]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:44:27.401]{"writeVariable":"設定保存開始"}
+[02:44:27.475]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:44:32.308]{"writeVariable":"設定保存開始"}
+[02:44:32.385]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:44:32.457]{"writeVariable":"設定保存開始"}
+[02:44:32.535]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:44:35.801]{"page_int":"index"}
+[02:44:40.826]{"init":"intruder3.3.3(debug)"}
+[02:44:40.831]{"resetStatus":"ステータス消去"}
+[02:44:40.841]{"resetWork":"ステータス消去"}
+[02:44:40.855]{"sendAPI":{"type":"get_map_list"}}
+[02:44:40.922]{"scanVariable":"test3"}
+[02:44:41.004]{"_scanVariable":{"settings":{"test3":{"multiple":"{\"count\":0,\"myip\":\"192.168.11.31\",\"mynumber\":0,\"iplist\":[\"192.168.11.44\"],\"hublist\":[\"退避場所\"],\"exceptionlist\":[\"A\",\"B\"],\"avoidance\":\"拠点\"}","music":"0","music_volume":"80","announce":"{\"wakeup\":\"0\",\"map\":\"0\",\"select\":\"0\",\"sequence\":\"0\",\"onmove\":\"0\",\"moving\":\"0\",\"halt\":\"0\",\"face\":\"0\",\"relocate\":\"0\",\"complete\":\"0\",\"autostart\":\"0\",\"turnaround\":\"0\"}","announce_volume":"100","message":"{\"sequence\":\"0\",\"hub\":\"0\",\"senario\":\"0\",\"complete\":\"0\",\"autostart\":\"0\",\"turnaround\":\"0\"}","trip_mode":"hub","velocity":"100","turnaround":"{\"number\":0,\"wait\":25}","hub":"{\"hub\":\"拠点\",\"destination_settings\":[\"退避場所\"],\"wait\":\"200\"}","tolerance":"{\"destination_settings\":{\"A\":\"110\",\"B\":\"110\",\"C\":\"110\",\"D\":\"110\",\"拠点\":\"110\",\"退避場所\":\"110\"},\"default\":\"110\"}","charge_spot":"充電場所","order":"[\"A\",\"B\",\"D\",\"C\",\"拠点\",\"退避場所\"]","sequence":"{\"destination_settings\":[],\"wait\":\"25\"}","senario":"[{\"name\":\"default\",\"destination_settings\":[],\"wait\":\"25\"},{\"name\":\"説明用\",\"destination_settings\":[\"B\",\"C\",\"退避場所\",\"D\",\"拠点\"],\"wait\":\"25\"}]","reserve":"[{\"senario_number\":0,\"senario_name\":\"default\",\"time\":\"15:00\",\"enable\":false},{\"senario_number\":\"1\",\"senario_name\":\"説明用\",\"time\":\"1230\",\"enable\":true}]","battery":"{\"alert\":20,\"warning\":10,\"status\":0,\"level\":90}","multiple_flg":"true"}}}}
+[02:44:42.179]{"playAnnounce":"http://localhost/intruder3/asset/announce/001_20240107.wav"}
+[02:44:45.937]{"initDestinationListTorelance":{"A":"110","B":"110","C":"110","D":"110","拠点":"110","退避場所":"110"}}
+[02:44:46.069]{"initMeMultiple":"http://localhost/intruder3/component/initmultiple.php"}
+[02:44:46.094]{"operatedFlg":"operatedFlg:false"}
+[02:44:46.103]{"transScreen":"select"}
+[02:44:46.274]{"page_int":"select"}
+[02:44:46.295]{"sendAPI":{"type":"get_current_location"}}
+[02:44:46.302]{"viewDestinationList":["A","B","D","C","拠点","退避場所"]}
+[02:44:46.302]{"resetStatus":"ステータス消去"}
+[02:44:46.323]{"playAnnounce":"http://localhost/intruder3/asset/announce/005_20240107.wav"}
+[02:44:54.227]{"makeWork":{"cutin":"false"}}
+[02:44:55.359]{"getMultipleJudgement":{"noMARecovery":"false","count":"0"}}
+[02:44:55.427]{"setWorkALL":{"list":["D","拠点"],"number":"0","from":"A","to":"D","reset":"0","ready":"false"}}
+[02:44:55.493]{"sendAPI":{"type":"req_move","data":{"destination_name":"D","speed_rate":"100","xy_goal_tolerance":"0.11"}}}
+[02:45:01.839]{"page_int":"onmove"}
+[02:45:01.879]{"operatedFlg":"operatedFlg:true"}
+[02:45:01.907]{"playAnnounce":"http://localhost/intruder3/asset/announce/010_20240107.wav"}
+[02:45:06.878]POST:{
+    "default": {
+        "work": {
+            "list": [],
+            "number": 0,
+            "from": null,
+            "to": null,
+            "reset": 0,
+            "ready": false
+        },
+        "current_location": "",
+        "mynumber": 0
+    },
+    "192.168.11.31": {
+        "work": {
+            "list": [
+                "D",
+                "拠点"
+            ],
+            "number": 0,
+            "from": "A",
+            "to": "D",
+            "reset": 0,
+            "ready": false
+        },
+        "current_location": "",
+        "mynumber": 0
+    }
+}
+[02:45:06.935]{"_refreshMultiple":{"default":{"work":{"number":"0","from":"","to":"","reset":"0","ready":"false"},"current_location":"","mynumber":"0"},"192.168.11.31":{"work":{"list":["D","拠点"],"number":"0","from":"A","to":"D","reset":"0","ready":"false"},"current_location":"","mynumber":"0"}}}
+[02:45:06.951]{"_sendMeMultiple":"http://192.168.11.44/intruder3/component/multiple.php?ip=MTkyLjE2OC4xMS4zMQ=="}
+[02:45:06.963]{"_sendMeMultiple":{"work":{"list":["D","拠点"],"number":"0","from":"A","to":"D","reset":"0","ready":"false"},"current_location":"","mynumber":"0"}}
+[02:45:28.021]{"ajaxExternal":{"type":"sendMeMultiple","data":"false"}}
+[02:45:30.436]{"page_int":"complete"}
+[02:45:30.470]{"sendAPI":{"type":"get_current_location"}}
+[02:45:30.486]{"complete":{"list":["D","拠点"],"number":"0","from":"A","to":"D","reset":"0","ready":"false"}}
+[02:45:30.491]{"setWorkALL":{"list":["D","拠点"],"number":"1","from":"A","to":"D","reset":"0","ready":"false"}}
+[02:45:30.504]{"playAnnounce":"http://localhost/intruder3/asset/announce/020_20240107.wav"}
+[02:45:30.739]POST:{
+    "default": {
+        "work": {
+            "list": [],
+            "number": 0,
+            "from": null,
+            "to": null,
+            "reset": 0,
+            "ready": false
+        },
+        "current_location": "",
+        "mynumber": 0
+    },
+    "192.168.11.31": {
+        "work": {
+            "list": [
+                "D",
+                "拠点"
+            ],
+            "number": 1,
+            "from": "A",
+            "to": "D",
+            "reset": 0,
+            "ready": false
+        },
+        "current_location": "D",
+        "mynumber": 0
+    }
+}
+[02:45:30.804]{"_refreshMultiple":{"default":{"work":{"number":"0","from":"","to":"","reset":"0","ready":"false"},"current_location":"","mynumber":"0"},"192.168.11.31":{"work":{"list":["D","拠点"],"number":"1","from":"A","to":"D","reset":"0","ready":"false"},"current_location":"D","mynumber":"0"}}}
+[02:45:30.816]{"_sendMeMultiple":"http://192.168.11.44/intruder3/component/multiple.php?ip=MTkyLjE2OC4xMS4zMQ=="}
+[02:45:30.827]{"_sendMeMultiple":{"work":{"list":["D","拠点"],"number":"1","from":"A","to":"D","reset":"0","ready":"false"},"current_location":"D","mynumber":"0"}}
+[02:45:51.884]{"ajaxExternal":{"type":"sendMeMultiple","data":"false"}}
+[02:45:51.942]POST:{
+    "default": {
+        "work": {
+            "list": [],
+            "number": 0,
+            "from": null,
+            "to": null,
+            "reset": 0,
+            "ready": false
+        },
+        "current_location": "",
+        "mynumber": 0
+    },
+    "192.168.11.31": {
+        "work": {
+            "list": [
+                "D",
+                "拠点"
+            ],
+            "number": 1,
+            "from": "A",
+            "to": "D",
+            "reset": 0,
+            "ready": false
+        },
+        "current_location": "D",
+        "mynumber": 0
+    }
+}
+[02:45:51.995]{"_refreshMultiple":{"default":{"work":{"number":"0","from":"","to":"","reset":"0","ready":"false"},"current_location":"","mynumber":"0"},"192.168.11.31":{"work":{"list":["D","拠点"],"number":"1","from":"A","to":"D","reset":"0","ready":"false"},"current_location":"D","mynumber":"0"}}}
+[02:45:52.007]{"_sendMeMultiple":"http://192.168.11.44/intruder3/component/multiple.php?ip=MTkyLjE2OC4xMS4zMQ=="}
+[02:45:52.019]{"_sendMeMultiple":{"work":{"list":["D","拠点"],"number":"1","from":"A","to":"D","reset":"0","ready":"false"},"current_location":"D","mynumber":"0"}}
+[02:45:52.133]{"ajaxExternal":{"type":"sendMeMultiple","data":"false"}}
+[02:45:52.307]{"playAnnounce":"http://localhost/intruder3/asset/announce/020_20240107.wav"}
+[02:46:24.173]{"page_int":"index"}
+[02:46:29.229]{"init":"intruder3.3.3(debug)"}
+[02:46:29.242]{"resetStatus":"ステータス消去"}
+[02:46:29.243]{"resetWork":"ステータス消去"}
+[02:46:29.254]{"sendAPI":{"type":"get_map_list"}}
+[02:46:29.287]{"scanVariable":"test3"}
+[02:46:29.344]{"_scanVariable":{"settings":{"test3":{"multiple":"{\"count\":0,\"myip\":\"192.168.11.31\",\"mynumber\":0,\"iplist\":[\"192.168.11.44\"],\"hublist\":[\"退避場所\"],\"exceptionlist\":[\"A\",\"B\"],\"avoidance\":\"拠点\"}","music":"0","music_volume":"80","announce":"{\"wakeup\":\"0\",\"map\":\"0\",\"select\":\"0\",\"sequence\":\"0\",\"onmove\":\"0\",\"moving\":\"0\",\"halt\":\"0\",\"face\":\"0\",\"relocate\":\"0\",\"complete\":\"0\",\"autostart\":\"0\",\"turnaround\":\"0\"}","announce_volume":"100","message":"{\"sequence\":\"0\",\"hub\":\"0\",\"senario\":\"0\",\"complete\":\"0\",\"autostart\":\"0\",\"turnaround\":\"0\"}","trip_mode":"hub","velocity":"100","turnaround":"{\"number\":0,\"wait\":25}","hub":"{\"hub\":\"拠点\",\"destination_settings\":[\"退避場所\"],\"wait\":\"200\"}","tolerance":"{\"destination_settings\":{\"A\":\"110\",\"B\":\"110\",\"C\":\"110\",\"D\":\"110\",\"拠点\":\"110\",\"退避場所\":\"110\"},\"default\":\"110\"}","charge_spot":"充電場所","order":"[\"A\",\"B\",\"D\",\"C\",\"拠点\",\"退避場所\"]","sequence":"{\"destination_settings\":[],\"wait\":\"25\"}","senario":"[{\"name\":\"default\",\"destination_settings\":[],\"wait\":\"25\"},{\"name\":\"説明用\",\"destination_settings\":[\"B\",\"C\",\"退避場所\",\"D\",\"拠点\"],\"wait\":\"25\"}]","reserve":"[{\"senario_number\":0,\"senario_name\":\"default\",\"time\":\"15:00\",\"enable\":false},{\"senario_number\":\"1\",\"senario_name\":\"説明用\",\"time\":\"1230\",\"enable\":true}]","battery":"{\"alert\":20,\"warning\":10,\"status\":0,\"level\":90}","multiple_flg":"true"}}}}
+[02:46:30.536]{"playAnnounce":"http://localhost/intruder3/asset/announce/001_20240107.wav"}
+[02:46:34.340]{"initDestinationListTorelance":{"A":"110","B":"110","C":"110","D":"110","拠点":"110","退避場所":"110"}}
+[02:46:34.469]{"initMeMultiple":"http://localhost/intruder3/component/initmultiple.php"}
+[02:46:34.489]{"operatedFlg":"operatedFlg:false"}
+[02:46:34.497]{"transScreen":"select"}
+[02:46:34.623]{"page_int":"select"}
+[02:46:34.656]{"sendAPI":{"type":"get_current_location"}}
+[02:46:34.660]{"viewDestinationList":["A","B","D","C","拠点","退避場所"]}
+[02:46:34.663]{"resetStatus":"ステータス消去"}
+[02:46:34.680]{"playAnnounce":"http://localhost/intruder3/asset/announce/005_20240107.wav"}
+[02:47:01.825]{"writeVariable":"設定保存開始"}
+[02:47:01.895]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:47:01.973]{"writeVariable":"設定保存開始"}
+[02:47:02.045]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:47:55.997]{"writeVariable":"設定保存開始"}
+[02:47:56.085]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}
+[02:47:56.153]{"writeVariable":"設定保存開始"}
+[02:47:56.214]{"writeVariable":{"current_map":"default","settings":{"default":{"multiple":{"count":"0","myip":"172.20.10.2","mynumber":"0","iplist":["172.20.10.9"],"hublist":["ゴール"],"avoidance":"false"},"music":"0","music_volume":"80","announce":{"wakeup":"0","map":"0","select":"0","sequence":"0","onmove":"0","moving":"0","halt":"0","face":"0","relocate":"0","complete":"0","autostart":"0","turnaround":"0"},"announce_volume":"100","message":{"sequence":"0","hub":"0","senario":"0","complete":"0","autostart":"0","turnaround":"0"},"trip_mode":"normal","velocity":"100","turnaround":{"number":"0","wait":"25"},"hub":{"hub":"","wait":"25"},"tolerance":{"destination_settings":"","default":"110"},"charge_spot":"充電場所","sequence":{"wait":"25"},"senario":[{"name":"default","wait":"25"}],"reserve":[{"senario_number":"0","senario_name":"default","time":"15:00","enable":"false"}],"battery":{"alert":"20","warning":"10","status":"1","level":"99"},"multiple_flg":"false"}}}}

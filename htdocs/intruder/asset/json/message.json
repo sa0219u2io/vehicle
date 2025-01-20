@@ -1,7 +1,12 @@
 {
   "autostart": [
     {
-      "name": "へ送ります",
+      "name": "<div style=\"font-size: 100px;\">へ戻る</div>",
+      "prefix": "destination_name",
+      "suffix": ""
+    },
+    {
+      "name": "へ送る",
       "prefix": "destination_name",
       "suffix": ""
     },

@@ -1,0 +1,63 @@
+{
+  "autostart": [
+    {
+      "name": "<div style=\"font-size: 100px;\">へ戻る</div>",
+      "description":"目的地名＋へ戻る（大）",
+      "prefix": "destination_name",
+      "suffix": ""
+    },
+    {
+      "name": "へ送る",
+      "description":"目的地名＋へ送る",
+      "prefix": "destination_name",
+      "suffix": ""
+    },
+    {
+      "name": "",
+      "description":"目的地名",
+      "prefix": "destination_name",
+      "suffix": ""
+    },
+    {
+      "name": "戻す",
+      "description":"戻す",
+      "prefix": "",
+      "suffix": ""
+    }
+  ],
+  "complete": [
+    {
+      "name": "目的地に到着しました<br>次の目的地を選択してください",
+      "prefix": "",
+      "suffix": ""
+    }
+  ],
+  "turnaround": [
+    {
+      "name": "往復運転のため折り返します",
+      "prefix": "",
+      "suffix": ""
+    }
+  ],
+  "sequence": [
+    {
+      "name": "連続走行により次の目的地に移動します",
+      "prefix": "",
+      "suffix": ""
+    }
+  ],
+  "hub": [
+    {
+      "name": "拠点走行により次の目的地に移動します",
+      "prefix": "",
+      "suffix": ""
+    }
+  ],
+  "senario": [
+    {
+      "name": "シナリオ走行により次の目的地に移動します",
+      "prefix": "",
+      "suffix": ""
+    }
+  ]
+}

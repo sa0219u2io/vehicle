@@ -1,0 +1,33 @@
+:root {
+  /* --height-window: 644px;
+  --height-main: 496px;
+  --height-short: 24px;
+  --height-basic: 30px;
+  --hight-high: 36px;
+  
+  --width-window: 1148px;
+  --width-main: 1016px;
+  --width-half: 508px;
+  --width-btn:50px;
+  --width-narrow: 80px;
+  --width-basic: 100px;
+  --width-broad: 150px; */
+
+  --height-window: 100%;
+  --height-main: calc(100% - 48px);
+  --height-short: 24px;
+  --height-basic: 30px;
+  --hight-high: 36px;
+  
+  --width-window: 100%;
+  --width-main: calc(100% - 132px);
+  --width-half: 50%;
+  --width-btn:50px;
+  --width-narrow: 80px;
+  --width-basic: 100px;
+  --width-broad: 150px;
+}
+
+html, body {
+  background-repeat: no-repeat;
+}

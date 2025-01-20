@@ -53,8 +53,12 @@ function resetTemp() {
   setVariable('senario_i', 0)
   setVariable('sequence_i', 0)
   setVariable('turnaround_i', 0)
+  setVariable('reserve_Main', '')
+  setVariable('reserve_Under', '')
 
   setVariable('forcemove', 0)
+  setVariable('autostart', 'false')
+  localStorage.setItem('remoteAutorun', 'false');
 }
 
 function clearMoveStatus() {
@@ -94,6 +98,8 @@ function writeVariable(current_map) {
     // console.log(variables[key])
   });
   default_setting.settings[default_setting.current_map] = variables;
+  // delete default_setting.settings.default;
+  console.debug(default_setting)
 
   $.ajax({
     type: "POST",
@@ -108,6 +114,7 @@ function writeVariable(current_map) {
 //変数復元
 function scanVariable(current_map) {
   // console.trace()
+  default_setting = readJson('variable')
   var response = new Object();
   setLog(current_map)
   var res = new Object
@@ -121,15 +128,21 @@ function scanVariable(current_map) {
     // 既存MAPのsettingを取得
     if (data.settings[current_map] == undefined) {
       // 既存MAPのsettingがない場合
-      res = data.settings['default']
+      res = default_setting.settings['default']
     } else {
       // 既存MAPのsettingがある場合
       res = data.settings[current_map]
     }
 
-    Object.keys(res).forEach(function(key) {
+    //項目はvariablesから引っ張る
+    Object.keys(default_setting.settings.default).forEach(function(key) {
       // console.log(key)
-      var val = this[key];
+      if (res[key] == undefined) {
+        var val = default_setting.settings.default[key];
+      } else {
+        var val = res[key];
+      }
+      
       // console.log(val)
       if (typeof val == 'object') {val = JSON.stringify(val)}
       setVariable(key, val);
@@ -267,16 +280,25 @@ function setLog(obj, level='info') {
   log[caller] = obj
   switch(level) {
     case 'info':
-      console.log(log);
+      console.debug(JSON.stringify(log));
       break;
     case 'api':
-      console.debug(log);
+      console.debug(JSON.stringify(log));
       break;
     default:
-      console.debug(log);
+      console.debug(JSON.stringify(log));
       break;
   }
-  
+  $.ajax({
+    type: "POST",
+    url: webroot+appname+'/component/ajaxLog.php?level=debug',
+    //data: JSON.stringify(log),
+    data : log,
+    dataType: 'JSON'
+  }).done(function _writeRemoteJson(data){
+    // setLog('Remote設定保存完了');
+    // setLog(data);
+  });
 }
 // ウェイトボール
 function loadBall(mode = 0) {
@@ -413,4 +435,76 @@ function wipeMoveJson() {
 // NUM=値 LEN=桁数
 function zeroPadding(NUM, LEN){
 	return ( Array(LEN).join('0') + NUM ).slice( -LEN );
+}
+
+// remote用状態読取
+function readAutoReturnJson() {
+  data = {}
+  url= webroot+appname+'/asset/json/autoReturn.json'
+  var res = 'fail_to_get_JSON'
+  $.ajaxSetup({async: false});
+  $.getJSON(url, (data) => {
+  }).done(function(data){
+    res = data
+  });
+  return res
+}
+
+// 予約メッセージ
+function reserveMainMessage(content) {
+  setVariable('reserve_Main', content)
+}
+
+// 予約メッセージ
+function reserveUnderMessage(content) {
+  setVariable('reserve_Under', content)
+}
+
+function checkMessage() {
+  message = getVariable('reserve_Main') 
+  if (message != '') {
+    setMainMessage('reserve_Main')
+    setVariable('reserve_Main', '')
+  }
+  message = getVariable('reserve_Under') 
+  if (message != '') {
+    setUnderMessage('reserve_Under')
+    setVariable('reserve_Under', '')
+  }
+}
+
+function setAutoReturnCamera() {
+  setLog('autoReturnCamera')
+  autoReturnCamera = getVariable('auto_return_camera');
+  if (autoReturnCamera == 0) {
+    setVariable('auto_return_camera', 1)
+  } else {
+    setVariable('auto_return_camera', 0)
+  }
+  setVariable('auto_return_camera_basewait', 20)
+  setVariable('auto_return_camera_afterwait', 10)
+}
+
+function sendCamera(id) {
+  console.log('sendCamera:'+id)
+  setUnderMessage('カメラ設定開始:'+id)
+  sendCameraEndpoint = "http://192.168.100."+id
+
+  jsontext = '{"type":"set_camera","data":{"endpoint":"http://192.168.100.1/'+appname+'/component/autoreturn.php?camera='+id+'","cycle_millisecond":1000}}'
+  // jsontext = JSON.stringify(json)
+  // console.log(jsontext)
+  $.ajax({
+    type: "POST",
+    url: sendCameraEndpoint,
+    data: jsontext,
+    dataType: 'json',
+    timeout: 3000
+  }).done(function sendCameraACK(data) {
+    setLog(jsontext);
+    setUnderMessage('Camera OK:'+id)
+  }).fail(function sendCameraNACK(data) {
+    setLog(jsontext);
+    setUnderMessage('Camera NG:'+id)
+  });
+  // setLog(data);
 }

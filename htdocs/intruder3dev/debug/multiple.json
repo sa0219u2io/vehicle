@@ -1,0 +1,53 @@
+{
+  "default": {
+      "work": {
+          "list": [],
+          "number": 0,
+          "from": null,
+          "to": null,
+          "reset": 0,
+          "ready": false
+      },
+      "current_location": "",
+      "mynumber": 0
+  },
+  "172.20.10.2": {
+      "work": {
+          "list": [],
+          "number": 0,
+          "from": null,
+          "to": null,
+          "reset": 0,
+          "ready": false,
+          "onmove": false
+      },
+      "current_location": "退避場所",
+      "mynumber": 0
+  },
+  "172.20.10.9": {
+      "work": {
+          "list": [],
+          "number": 0,
+          "from": null,
+          "to": "",
+          "reset": 0,
+          "ready": false,
+          "onmove": false
+      },
+      "current_location": "B",
+      "mynumber": 1
+  },
+  "192.168.11.44": {
+      "work": {
+          "list": [],
+          "number": 0,
+          "from": "退避場所",
+          "to": "拠点",
+          "reset": 0,
+          "ready": false,
+          "onmove": false
+      },
+      "current_location": "",
+      "mynumber": 1
+  }
+}

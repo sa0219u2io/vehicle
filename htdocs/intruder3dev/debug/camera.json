@@ -1,0 +1,7 @@
+{
+	"type":"set_camera",
+	"data":{
+		"endpoint": "192.168.11.4",
+		"cycle_millisecond": 1000
+	}
+}

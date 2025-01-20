@@ -1,6 +1,6 @@
 <?php
   $basename = basename(__FILE__, ".php");
-  $content['main'] = '<div class="haltdata"></div>';
+  $content['main'] = '<div class="haltdata"></div><div class="onmoveicon" id="modal-stopnow-open" onclick="stopnow()"><img src="asset/image/pictgram/stopmove_2.png"><p>一時停止</p></div></div>';
   include('component/template.php');  
 ?>
 <script>
@@ -16,3 +16,5 @@
   // 音楽・動画の再生
   setTimeout(function(){playAnnounce('halt')}, 200)
 </script>
+
+

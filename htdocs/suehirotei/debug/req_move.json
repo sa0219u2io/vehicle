@@ -1,8 +1,0 @@
-{
-  "type":"req_move",
-  "data":{
-    "result_cd":"0",
-    "error_cd":"",
-    "error_msg":""
-  }
-}

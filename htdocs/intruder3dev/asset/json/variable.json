@@ -1,0 +1,84 @@
+{
+  "current_map": "default",
+  "settings" :{
+    "default" : {
+      "multiple":{
+        "count": 0,
+        "myip":"172.20.10.2",
+        "mynumber":0,
+        "iplist" :["172.20.10.9"],
+        "hublist":["ゴール"],
+        "exceptionlist":[],
+        "avoidance": false
+      },
+      "music": "0",
+      "music_volume": "80",
+      "announce" : {
+        "wakeup" : "0",
+        "map" : "0",
+        "select" : "0",
+        "sequence" : "0",
+        "onmove" : "0",
+        "moving" : "0",
+        "halt" : "0",
+        "face" : "0",
+        "relocate" : "0",
+        "complete" : "0",
+        "autostart" : "0",
+        "turnaround" : "0"
+      },
+      "announce_volume": "100",
+      "message": {
+        "sequence" : "0",
+        "hub" : "0",
+        "senario" : "0",
+        "complete" : "0",
+        "autostart" : "0",
+        "turnaround" : "0"
+      },
+      "trip_mode": "normal",
+      "velocity": "100",
+      "turnaround" :{
+        "number":0,
+        "wait":25
+      },
+      "hub" : {
+          "hub" : null,
+          "destination_settings" : [],
+          "wait" : "25"
+      },
+      "tolerance" : {
+        "destination_settings" :  null,
+        "default" : "110"
+      },
+      "charge_spot" : "充電場所",
+      "order" : [],
+      "sequence" : {
+        "destination_settings" : [],
+        "wait" : "25"
+      },
+      "senario" : [
+        {
+          "name" : "default",
+          "destination_settings" : [],
+          "wait" : "25"
+        }
+      ],
+      "reserve" : [
+        {
+          "senario_number" : 0,
+          "senario_name" : "default",
+          "time" : "15:00",
+          "enable" : false
+        }
+      ],
+      "battery" : {
+        "alert" : 20,
+        "warning" : 10,
+        "status" : 1,
+        "level" : 99
+      },
+      "multiple_flg":false
+    }
+  }
+}

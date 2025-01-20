@@ -16,31 +16,31 @@
             "destination_name": "充電場所",
             "disp_order" : 0,
             "is_start": "ON",
-            "remark": "不可情報"
+            "remark": "付加情報"
           },
           {
             "destination_name": "厨房",
             "disp_order" : 0,
             "is_start": "OFF",
-            "remark": "不可情報"
+            "remark": "付加情報"
           },
           {
             "destination_name": "TBL1",
             "disp_order" : 0,
             "is_start": "OFF",
-            "remark": "不可情報"
+            "remark": "付加情報"
           },
           {
             "destination_name": "TBL2",
             "disp_order" : 0,
             "is_start": "OFF",
-            "remark": "不可情報"
+            "remark": "付加情報"
           },
           {
             "destination_name": "ゴール",
             "disp_order" : 0,
             "is_start": "OFF",
-            "remark": "不可情報"
+            "remark": "付加情報"
           }
         ]
       },
@@ -53,13 +53,13 @@
             "destination_name": "厨房2",
             "disp_order" : 0,
             "is_start": "ON",
-            "remark": "不可情報"
+            "remark": "付加情報"
           },
           {
             "destination_name": "ゴール2",
             "disp_order" : 0,
             "is_start": "OFF",
-            "remark": "不可情報"
+            "remark": "付加情報"
           }
         ]
       },
@@ -72,25 +72,25 @@
             "destination_name": "厨房",
             "disp_order" : 0,
             "is_start": "ON",
-            "remark": "不可情報"
+            "remark": "付加情報"
           },
           {
             "destination_name": "TBL1",
             "disp_order" : 0,
             "is_start": "ON",
-            "remark": "不可情報"
+            "remark": "付加情報"
           },
           {
             "destination_name": "TBL2",
             "disp_order" : 0,
             "is_start": "ON",
-            "remark": "不可情報"
+            "remark": "付加情報"
           },
           {
             "destination_name": "ゴール",
             "disp_order" : 0,
             "is_start": "OFF",
-            "remark": "不可情報"
+            "remark": "付加情報"
           }
         ]
       },
@@ -103,25 +103,25 @@
             "destination_name": "厨房",
             "disp_order" : 0,
             "is_start": "ON",
-            "remark": "不可情報"
+            "remark": "付加情報"
           },
           {
             "destination_name": "TBL1",
             "disp_order" : 0,
             "is_start": "ON",
-            "remark": "不可情報"
+            "remark": "付加情報"
           },
           {
             "destination_name": "TBL2",
             "disp_order" : 0,
             "is_start": "ON",
-            "remark": "不可情報"
+            "remark": "付加情報"
           },
           {
             "destination_name": "ゴール",
             "disp_order" : 0,
             "is_start": "OFF",
-            "remark": "不可情報"
+            "remark": "付加情報"
           }
         ]
       },
@@ -134,25 +134,25 @@
             "destination_name": "厨房",
             "disp_order" : 0,
             "is_start": "ON",
-            "remark": "不可情報"
+            "remark": "付加情報"
           },
           {
-            "destination_name": "TBL1",
+            "destination_name": "1",
             "disp_order" : 0,
             "is_start": "ON",
-            "remark": "不可情報"
+            "remark": "付加情報"
           },
           {
-            "destination_name": "TBL2",
+            "destination_name": "2",
             "disp_order" : 0,
             "is_start": "ON",
-            "remark": "不可情報"
+            "remark": "付加情報"
           },
           {
-            "destination_name": "ゴール",
+            "destination_name": "3",
             "disp_order" : 0,
             "is_start": "OFF",
-            "remark": "不可情報"
+            "remark": "付加情報"
           }
         ]
       }

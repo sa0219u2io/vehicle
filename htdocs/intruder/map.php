@@ -8,7 +8,7 @@
 <script>
   //起動時スクリプト
   get_map_list()
-  loadBall()
+  // loadBall()
   setTimeout(viewMapList(), 15000)
   setTimeout(function(){playAnnounce('map')}, 1000)
   //ループスクリプト

@@ -1,5 +1,6 @@
 <!-- 
   【要件】
+・モードに合わせた目的地一覧が表示される
 ・目的地一覧から、ロボットを遠隔でどこかに送れる
 ・到着すると、自己位置がわかる
 ・電源の状態も表示される
@@ -12,8 +13,14 @@
   ・一般的にアクセス画面　index.phpは固定（輩を3秒間隔でAjaxで読みなおす）
   -->
 <?php 
-  define('APP', 'intruder');
+  include('component/com.php');
+  include('component/error.php');
+  $em = new EM();
+  $em_string = json_encode($em);
+  // var_dump($em_string);
+
   $content['main_message'] = 'BUDDY リモートコンソール';
+  $content['under_message'] = '';
   $content['main'] = '<div class="boxlist" id="selectlist"></div><div class="altericon" id="altermode" onclick="alterMode()"></div>';
   $basename = basename(__FILE__, ".php");
   // include('component/template.php');
@@ -61,6 +68,11 @@
   ip = window.location.hostname;
   iphead = 'http://'+ip+'/'
   setUnderMessage(mainversion)
+  state = {};
+  // console.log(<?=$em_string?>)
+  em = <?=$em_string?>;
+  console.log(em)
+  // console.debug(em)
   // setTimeout(function(){playAnnounce('wakeup')}, 1000)
   //ループスクリプト
   function countup() {
@@ -74,8 +86,9 @@
     if (state == 'fail_to_get_JSON') {
       return
     }
+    // buddystate = state;
     console.log(state)
-    console.log(mystate)
+    // console.log(mystate)
     if (state.onmove == 1) {
       if (mystate != 'onmove') {
         console.log(mystate)
@@ -83,7 +96,13 @@
       }
       // return
     } else {
-      if (state.error == 0) {
+      if (state.autostart == 'true' || state.autostart == true) {
+        if (mystate != 'autostart') {
+          console.log(mystate)
+          showAutostart(state)
+        }
+        return
+      } else if (state.error == 0) {
         if (mystate != 'select') {
           console.log(mystate)
           showSelect(state)
@@ -115,17 +134,21 @@
     // $('.wrapper').addClass('face')
     string = state.move_to +'へ移動しています'
     setMainMessage(string)
+    $('.wrapper').addClass('warning')
     mystate = 'onmove'
   }
-
-  // 目的地一覧の表示
-  function showSelect(state) {
+  // 自動発進画面の表示
+  function showAutostart(state) {
     clearWrapper ()
+    string = '自動発進待機中<br>操作をする際は安全確認を実施してください'
+    $('.wrapper').addClass('caution')
+    setMainMessage(string)
+
     // 目的地リスト描画
     var destination_list = JSON.parse(state.destination_list)
     var order = JSON.parse(state.order)
-    console.log(destination_list)
-    console.log(order)
+    // console.log(destination_list)
+    // console.log(order)
     if (destination_list == undefined) {
       showError()
       return
@@ -141,6 +164,43 @@
     $('.boxlist').empty()
     Object.keys(destination_list).forEach(function(key) {
       $('.boxlist').append('<div class="selectbox" onclick="remote_move(\''+destination_list[key]+'\')" data="'+destination_list[key]+'" >'+destination_list[key]+'</div>')
+    });
+
+    mystate = 'autoreturn'
+  }
+
+  // 目的地一覧の表示
+  function showSelect(state) {
+    clearWrapper ()
+    // 目的地リスト描画
+    var destination_list = JSON.parse(state.destination_list)
+    var order = JSON.parse(state.order)
+    // console.log(destination_list)
+    // console.log(order)
+    if (destination_list == undefined) {
+      showError()
+      return
+    }
+
+    current_location = state.current_location
+
+    if (order.length > 0) {
+      destination_list = order
+    } else {
+      // destination_list = destination_list;
+    }
+    $('.boxlist').empty()
+    moveto = state.move_to
+    current_location = state.current_location
+    Object.keys(destination_list).forEach(function(key) {
+      if (destination_list[key] == state.current_location) {
+        $('.boxlist').append('<div class="selectbox selected" onclick="remote_move(\''+destination_list[key]+'\')" data="'+destination_list[key]+'" >'+destination_list[key]+'</div>')
+      } else if (destination_list[key] == state.move_to) {
+        $('.boxlist').append('<div class="selectbox picked" onclick="remote_move(\''+destination_list[key]+'\')" data="'+destination_list[key]+'" >'+destination_list[key]+'</div>')
+      } else {
+        $('.boxlist').append('<div class="selectbox" onclick="remote_move(\''+destination_list[key]+'\')" data="'+destination_list[key]+'" >'+destination_list[key]+'</div>')
+      }
+      
     });
     string = '目的地を選択してください'
     setMainMessage(string)
@@ -163,6 +223,16 @@
   function showError(state) {
     clearWrapper ()
     $('.wrapper').addClass('error')
+    if (state.error in em.em) {
+      console.log(em.em)
+      $('.wrapper').append('<div class="error_message">'+em.em[state.error]+'</div>')
+      // $('.error_message').append(em.em[state.error])
+    } else {
+      console.log(em.remote)
+      // $('.error_message').append(em.em.remote)
+      $('.wrapper').append('<div class="error_message">'+em.em.remote+'</div>')
+    }
+    // show_message = em
     mystate = 'error'
   }
 
@@ -171,9 +241,12 @@
     $('.wrapper').removeClass('error')
     $('.wrapper').removeClass('face')
     $('.wrapper').removeClass('halt')
+    $('.wrapper').removeClass('caution')
+    $('.wrapper').removeClass('warning')
     setMainMessage('')
     setUnderMessage('')
     $('#selectlist').empty()
+    $('.error_message').remove()
     stopBall()
   }
 
@@ -185,6 +258,7 @@
 
   // remote用状態書込
   function writeMoveJson(destination) {
+    console.log('writeMoveJson')
     $.ajax({
       type: "POST",
       url: iphead+appname+'/component/writeMove.php',
@@ -192,8 +266,9 @@
       dataType: 'json'
     }).done(function _writeRemoteJson(data){
       // setLog('Remote設定保存完了');
-      // setLog(data);
+      setLog(data);
     });
+    setUnderMessage('移動予約中['+destination+']')
   }
 
   // remote用状態読取

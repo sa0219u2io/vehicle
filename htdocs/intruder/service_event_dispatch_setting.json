@@ -29,7 +29,7 @@
       "title": "*****",
       "id": "info_move_error",
       "dispatch_type": "1",
-      "url": "http://localhost/intruder/error.php?error=info_move_error"
+      "url": "http://localhost/intruder/select.php"
     },
     {
       "title": "*****",
@@ -65,7 +65,7 @@
       "title": "*****",
       "id": "info_motor_collision_detection",
       "dispatch_type": "1",
-      "url": "http://localhost/intruder/select.php"
+      "url": "http://localhost/intruder/error.php?error=info_motor_collision_detection"
     },
     {
       "title": "*****",

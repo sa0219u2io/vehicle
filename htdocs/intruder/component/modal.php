@@ -22,6 +22,7 @@
       'face' => '顔画面',
       'index' => 'APP再起動',
       'erase' => '工場出荷設定',
+      'debug' => '各種デバッグ',
     ]
   ];
 ?>
@@ -47,9 +48,9 @@
   <div class="modalcontent">
   <div class="modalsubtitle">往復待機秒数</div>
   <div class="flexbox">
-      <div class="inbox"><p data-target="turnaround_wait" data-touch="-1" data-hold ="-5" class="number-alter" data-min="1" data-max="100">◀</p></div>
+      <div class="inbox"><p data-target="turnaround_wait" data-touch="-1" data-hold ="-5" class="number-alter" data-min="1" data-max="300">◀</p></div>
       <div class="inbox"><div id="turnaround_wait" data=""></div></div>秒
-      <div class="inbox"><p data-target="turnaround_wait" data-touch="1" data-hold ="5" class="number-alter" data-min="1" data-max="100">▶</data-target=></div>
+      <div class="inbox"><p data-target="turnaround_wait" data-touch="1" data-hold ="5" class="number-alter" data-min="1" data-max="300">▶</data-target=></div>
     </div>
     <button class="modal-button" data-target="turnaround_wait" id="set-turnaround_wait">セット</button>
     <div class="modalsubtitle">往復回数</div>
@@ -97,9 +98,9 @@
   <div class="modalcontent">
     <div class="modalsubtitle">目的地待機時間</div>
     <div class="flexbox">
-      <div class="inbox"><p data-target="wait-sequence" data-touch="-1" data-hold ="-5" class="number-alter" data-min="1" data-max="100">◀</p></div>
+      <div class="inbox"><p data-target="wait-sequence" data-touch="-1" data-hold ="-5" class="number-alter" data-min="1" data-max="300">◀</p></div>
       <div class="inbox"><div id="wait-sequence" data=""></div></div>秒
-      <div class="inbox"><p data-target="wait-sequence" data-touch="1" data-hold ="5" class="number-alter" data-min="1" data-max="100">▶</data-target=></div>
+      <div class="inbox"><p data-target="wait-sequence" data-touch="1" data-hold ="5" class="number-alter" data-min="1" data-max="300">▶</data-target=></div>
     </div>
     <button class="modal-button" data-target="wait-sequence" id="set-sequence">セット</button>
   </div>
@@ -117,9 +118,9 @@
     <div id="hubexlist" class="modalchild"></div>
     <div class="modalsubtitle">目的地待機時間</div>
     <div class="flexbox">
-      <div class="inbox"><p data-target="wait-hub" data-touch="-1" data-hold ="-5" class="number-alter" data-min="1" data-max="100">◀</p></div>
+      <div class="inbox"><p data-target="wait-hub" data-touch="-1" data-hold ="-5" class="number-alter" data-min="1" data-max="300">◀</p></div>
       <div class="inbox"><div id="wait-hub" data=""></div></div>秒
-      <div class="inbox"><p data-target="wait-hub" data-touch="1" data-hold ="5" class="number-alter" data-min="1" data-max="100">▶</data-target=></div>
+      <div class="inbox"><p data-target="wait-hub" data-touch="1" data-hold ="5" class="number-alter" data-min="1" data-max="300">▶</data-target=></div>
     </div>
     <button class="modal-button" data-target="wait-hub" id="set-hub">セット</button>
   </div>

@@ -2,9 +2,10 @@
 //初期設定variablefilename
 ///////////////////////////////////////////////////////////////
 //vehicleフォルダ内にて
-//zip -r ../intruder-2-6-10.zip *
+//zip -r ../intruder-2-8-21.zip *
 //debug 0: 本番, 1: デバッグ
 const debug = localStorage.getItem('debug')?'debug':'release';
+const onmovemovie = localStorage.getItem('onmovemovie')?'true':'false';
 const webroot = 'http://localhost/'
 const variablefilename = 'intruder_variable.json'
 const defaultlooptimer = 1000;
@@ -20,7 +21,7 @@ if (debug == 'release')  {
   var systemUI = window
 }
 const broadcast = new BroadcastChannel('System')
-const mainversion = appname + '2.6.10' + '('+debug+')' + 'IP={'+myip+'}'
+const mainversion = appname + '2.8.21' + '('+debug+')' + 'IP={'+myip+'}'
 const asset = webroot+appname+'/asset/'
 
 ///////////////////////////////////////////////////////////////
@@ -28,7 +29,7 @@ const asset = webroot+appname+'/asset/'
 ///////////////////////////////////////////////////////////////
 //変数の初期化
 function init() {
-  loadBall()
+  loadBall(1)
   setLog(mainversion)
   resetVariable()
   resetTemp()
@@ -36,13 +37,14 @@ function init() {
   get_map_list()
   wipeRemoteJson()
   wipeMoveJson()
+  // setTimeout(activateAutoReturnCamera,3000)
   // scanVariable()
   // resetTemp()
-  setTimeout(init_map_check, 8000)
+  setTimeout(init_map_check, 4000)
 }
 // 全ページ共通処理
 function beforehandler() {
-  if (basename != 'error' && basename != 'index' && basename != 'remote') {
+  if (basename != 'error' && basename != 'index' && basename != 'remote' && basename != 'debug') {
     checkBattery()
     get_system_data()
     // setLog('CheckBattery')
@@ -104,6 +106,7 @@ function callback_GML(res) {
 // システムデータ取得
 function callback_GSD(res) {
   // ただ、格納するだけ
+  setLog(res);
   if(res.data.battery_status == 2) {
     setVariable('battery_charge', 1)
   } else {
@@ -143,6 +146,7 @@ function complete() {
   current_location = getVariable('current_location')
   move_to = getVariable('move_to')
   move_from = getVariable('move_from')
+  autoReturnlock = 1;
 
   trip_mode = getVariable('trip_mode')
   turnaround = getVariable('turnaround')
@@ -161,7 +165,7 @@ function complete() {
   if (move_to != current_location) {
     current_location = move_to
   }
-  
+ 
   console.log('current_location: '+current_location)
   console.log('move_to: '+move_to)
   console.log('move_from: '+move_from)
@@ -205,11 +209,12 @@ function complete() {
       // 拠点走行[一般]
       if (remote == 'force') {
         // 割り込み指令アリの場合
-        forceRemote(hub.hub)
+        forceRemoteNoNext(hub.hub)
         console.log('割り込み')
         return
       }
       playAnnounce('autostart')
+      setInterval(function(){playAnnounce('autostart')}, 10000)
       _autostart(hub.hub, hub.wait);
     }
   } else if (trip_mode == 'sequence') {
@@ -332,17 +337,21 @@ function complete() {
   function _autostart (_destination_name, _wait) {
     console.log('自動発進')
     stopBall()
+    localStorage.setItem('remoteAutorun', 'false');
+    localStorage.setItem('waitingDestination', _destination_name);
+    setVariable('autostart', 'true')
+
     wait = _wait
     destination_name = _destination_name
     // 画面に[～へ送る]ボタンを表示
     // メッセージを選択
     message = JSON.parse(getVariable('message'))
-    message_json = readJson('message');
+    message_json =readJson('message')
     console.log(message_json)
     if (message_json.autostart[message.autostart] != null) {
       temp = message_json.autostart[message.autostart] 
     } else {
-      temp = message_json.autostart[0] 
+      temp = message_json.autostart[0]
     }
     if (temp.prefix == "destination_name") {
       temp.name = _destination_name + temp.name
@@ -359,22 +368,90 @@ function complete() {
     }
 
     count = 0;
+    aftercount=0;
     temp = 0;
+
+    // basewait = getVariable('auto_return_camera_basewait')
+    afterwait = getVariable('auto_return_camera_afterwait')
+    aftercount = 0;
+
     setInterval(_autostart_countup, defaultlooptimer)
+
+    // auto_return_camera = (getVariable(auto_return_camera))?1:0;
+    if (getVariable('auto_return_camera') == 1) {    
+      setInterval(_checkQrCamera, defaultlooptimer)
+    }
   }
 
   //ループスクリプト
   function _autostart_countup() {
+    movejson = readMoveJson()
+    console.debug(movejson)
+    if (movejson.force == 'force') {
+      // 割り込み指令アリの場合
+      forceRemoteNoNext()
+      return
+    }
+
     if (temp == 0) {
+      remoteAutoRun = localStorage.getItem('remoteAutorun');
+
       if (count >= wait) {
         now = wait - count;
-        setMainMessage(now+'秒後に自動で発進します')
-        move(destination_name)
+        setMainMessage('自動で発進します'+'['+remoteAutoRun+']')
+        localStorage.setItem('remoteAutorun', 'false');
         temp = 1;
-      } else {
-        now = wait - count;
-        setMainMessage(now+'秒後に自動で発進します')
+        move(destination_name)
+
+      } else if (remoteAutoRun == 'true') {
+        setLog('HereWeGO:'.aftercount)
+        if (aftercount >= afterwait) {
+          // after_wait 経過時
+          setMainMessage('自動で発進します'+'['+remoteAutoRun+']')
+          localStorage.setItem('remoteAutorun', 'false');
+          temp = 1;
+          move(destination_name)
+        } else {
+          now = afterwait - aftercount;
+          setMainMessage(now+'秒後に自動で発進します'+'['+remoteAutoRun+']')
+        }
+        setLog(aftercount+'/'+afterwait,0)
+        aftercount++;
         count++;
+      // 条件が全て未成就
+      } else {
+        aftercount = 0;
+        if (autoReturnlock == 0) {
+          move(destination_name)
+        } else {
+          now = wait - count;
+          setMainMessage(now+'秒後に自動で発進します'+'['+remoteAutoRun+']')
+          count++;
+        }
+      }
+    }
+  }
+
+  // 自動帰宅カメラ
+  function _checkQrCamera() {
+    if (temp == 0) {
+      data = readAutoReturnJson()
+      setLog(data)
+      countNotReady = 0;
+      all_count = 0;
+      true_count = 0;
+
+      Object.keys(data.camera).forEach(function(key) {
+        all_count++;
+        if (data.camera[key] == true || data.camera[key] == 'true') {
+          true_count++;
+        }
+      });
+
+      if (true_count >= all_count) {
+        localStorage.setItem('remoteAutorun', 'true');
+      } else {
+        localStorage.setItem('remoteAutorun', 'false');
       }
     }
   }
@@ -420,7 +497,7 @@ function doRemoteMove() {
   if ($.inArray(movejson.destination, destination_list) >= 0) {
     move(movejson.destination)
     wipeMoveJson()
-    setVariable('trip_mode' ,'normal')
+    // setVariable('trip_mode' ,'normal')
   }
 }
 
@@ -435,11 +512,26 @@ function checkRemoteMove() {
 }
 
 function forceRemote(next) {
-  setVariable('forcemove', next)
+  // setVariable('forcemove', next)
   movejson = readMoveJson()
   destination_list = JSON.parse(getVariable('destination_list'))
+  console.log(movejson)
+  console.log(destination_list)
   if ($.inArray(movejson.destination, destination_list) >= 0) {
-    req_move(movejson.destination)
+    move(movejson.destination)
+    wipeMoveJson()
+  }
+}
+
+function forceRemoteNoNext() {
+  // setVariable('forcemove', next)
+  movejson = readMoveJson()
+  destination_list = JSON.parse(getVariable('destination_list'))
+  console.log(movejson)
+  console.log(destination_list)
+  if ($.inArray(movejson.destination, destination_list) >= 0) {
+    setUnderMessage('割込み遠隔操作にて移動します['+movejson.destination+']')
+    move(movejson.destination)
     wipeMoveJson()
   }
 }

@@ -1,0 +1,901 @@
+@charset "UTF-8";
+/*----------------------------------------
+    全共通
+-----------------------------------------*/
+:root {
+  --white: #FDFDFD;
+  --light: #F0F0F0;
+  --soft: #f8edba;
+  --dim: #C3C3C3;
+  --gray: #4E5154;
+  --dark: #181819;
+  --primary: #008A9B;
+  --secondary: #D5FAFF;
+  --operation: #00BC8D;
+  --info: #4fc3f7;
+  --success: #00BC8D;
+  --warning: #ffd500;
+  --deleted: #d6d6d6;
+  --danger: #C00000;
+  --transparent: rgba(255,255,255,0);
+  --dark-transparent: rgba(0, 0, 0, 0.3);
+
+  --height-window: 644px;
+  --height-modal: 540px;
+  --height-main: 496px;
+  --height-short: 24px;
+  --height-basic: 30px;
+  --hight-high: 36px;
+  
+  --width-window: 1148px;
+  --width-modal: 1048px;
+  --width-main: 1016px;
+  --width-half: 508px;
+  --width-btn:50px;
+  --width-narrow: 80px;
+  --width-basic: 100px;
+  --width-broad: 150px;
+}
+
+html, body {
+  width:1148px;
+  height:644px;
+  margin: 0;
+  padding: 0;
+  background-image: url("../image/top_wallpaper.png");
+  background-size: contain;
+  box-sizing: content-box;
+}
+a {
+text-decoration: none;
+}
+a:link, a:visited, a:hover, a:active {
+  color: inherit;
+}
+hr {
+  margin: 0;
+  margin-bottom: 10px;
+}
+a.widera {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+}
+@keyframes flash {
+  0%,100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/*----------------------------------------
+    フレーム
+-----------------------------------------*/
+/*本体の画面サイズを設定*/
+.wrapper {
+  width:var(--width-window);
+  height:var(--height-window);
+  margin: 0;
+  padding: 0;
+  font: 16px sans-serif;
+  overflow: hidden;
+  position: absolute;
+  top:0;
+  left:0;
+}
+.main {
+  width: var(--width-main);
+  height: var(--height-main);
+  padding: 15px;
+  position: absolute;
+  top: 80px;
+  left: 51px;
+}
+
+.left_nav {
+  position: absolute;
+  top: 0;
+  left:-1px;
+  z-index: 999;
+  width: 51px;
+  height:100%;
+  background-color:var(--primary);
+}
+
+.right_nav {
+  position: absolute;
+  top: 0;
+  right:-1px;
+  z-index: 999;
+  width: 51px;
+  height:100%;
+  background-color:var(--primary);
+}
+
+.halt::after {
+  content:"";
+  -webkit-animation:blink 1.5s ease-in-out infinite alternate;
+  background-color: rgba(255,0,0 ,0.5);
+  position:absolute;
+  display: block;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+
+.error::after {
+  content:"";
+  -webkit-animation:blink 1.5s ease-in-out infinite alternate;
+  background-color: rgba(255,0,0 ,0.5);
+  position:absolute;
+  display: block;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+
+.charging::after {
+  content:"";
+  -webkit-animation:blink 1.5s ease-in-out infinite alternate;
+  background-color: rgba(0, 255, 255, 0.5);
+  position:absolute;
+  display: block;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+
+.caution {
+  content:"";
+  -webkit-animation:blink 1.5s ease-in-out infinite alternate;
+  background-color: rgba(255,255,0 ,0.5);
+  width:100%;
+  height:100%;
+}
+
+.warning {
+  content:"";
+  -webkit-animation:blink 1.5s ease-in-out infinite alternate;
+  background-color: rgba(255, 0, 100, 0.5);
+  width:100%;
+  height:100%;
+}
+
+.flash {
+  animation: flash 2s linear infinite;
+}
+
+.redflash {
+  color: rgba(255,0,0 ,0.5);
+  animation: flash 2s linear infinite;
+}
+
+@-webkit-keyframes blink{
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+/*----------------------------------------
+    メッセージ
+-----------------------------------------*/
+.error_message {
+  width: 1016px;
+  height: 496px;
+  padding: 15px;
+  font-size: 48px;
+  line-height: 64px;
+  font-weight: bold;
+  position: absolute;
+  z-index: 1;
+  top: 80px;
+  left: 51px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: var(--danger);
+  animation: flash 2s linear infinite;
+}
+.main_message {
+  width: calc(100% - 100px);
+  height: 80px;
+  margin: 0;
+  padding: 0 50px;
+  position: absolute;
+  top: 0;
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: bold;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.under_message {
+  width: calc(100% - 100px);
+  /* background-color: var(--white); */
+  padding: 0 50px;
+  height: 40px;
+  z-index: 1000;
+  position: absolute;
+  bottom: 0;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: bold;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.modal_message {
+  z-index:997;
+  font-size: 60px!important;
+  font-weight: bold;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+/*----------------------------------------
+    モーダル
+-----------------------------------------*/
+/* モーダル　メニュー・共通エリア */
+#modal-bg {
+  width:100%;
+  height:100%;
+  background-color: var(--dark-transparent);
+}
+
+.modal {
+  width: var(--width-modal);
+  height: var(--height-modal);
+  margin: 0;
+  padding: 0;
+  background-color: var(--white);
+  border-radius: 20px;
+  border: 1px solid var(--gray);
+  color: var(--gray);
+  position:fixed;
+  top: 50px;
+  left:50px;
+  z-index: 2;
+  text-align: center;
+  font-size: 36px;
+  overflow-y: scroll;
+}
+.modalclose {
+  margin: 0;
+  position:absolute;
+  top: 0;
+  right: 50px;
+  z-index: 10001;
+}
+.modalclose img {
+  height: 100px;
+  width: 100px;
+}
+menu {
+  margin: 0;
+  padding: 0;
+  background-color: var(--white);
+  width: 1048px;
+  height: 524px;
+  border-radius: 10px;
+}
+.menurow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.child {
+  background-color: var(--soft);
+}
+.menuicon {
+  width:170px;
+  height:175px;
+  float: left;
+  text-align: center;
+}
+.menuicon p {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: bold;
+  color: var(--gray);
+}
+.menuicon img{
+  margin: 5px;
+  padding: 0;
+  width: 120px;
+  height: 120px;
+}
+/* モーダルコンテンツエリア */
+.modaltitle {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  font: 48px 1.5 sans-serif;
+  line-height: 72px;
+  border-bottom: 1px solid var(--dark);
+}
+.modalsubtitle {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  font: 36px 1.5 sans-serif;
+  line-height: 48px;
+  border-bottom: 1px solid var(--dark);
+}
+.modalhelp {
+  margin: 0 auto;
+  padding: 5%;
+  font: 24px 1 sans-serif;
+  line-height: 36px;
+}
+.modalcontent {
+  margin: 0 auto;
+  padding: 5%;
+  font: 24px 1 sans-serif;
+  line-height: 36px;
+  min-height: 200px;
+}
+.modal button, .modalnum button {
+  width: 90%;
+  margin: 20px auto;
+  height: 80px;
+  border-radius: 10px 10px 10px 10px;
+  border : 1px solid var(--white);
+  background-color: var(--primary);
+  color: var(--white);
+
+  display: flex;
+  font-size: 36px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.flexbox {
+  display: flex;
+  font-size: 64px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0 50px;
+}
+.inbox {
+  margin: 0 30px;
+}
+#modal-velocity p {
+  display: inline;
+}
+.inbox div {
+  display: inline;
+}
+#hublist {
+  margin: 30px;
+}
+.row {
+  width: 80%;
+  height:64px;
+  line-height: 64px;
+  font-size: 30px;
+  border-radius: 10px 10px 10px 10px;
+  border : 1px solid var(--primary);
+  margin: 0 auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-size: 32px;
+}
+.modal-selected {
+  color: var(--white);
+  background-color: var(--operation);
+}
+.modal input {
+  width: calc(100% - 150px);
+  height: 100%;
+  font-size: 30px;
+}
+.sumbit {
+  display: inline;
+  width: 150px;
+  height: 100%;
+  border-radius: 10px 10px 10px 10px;
+  border: 1px solid var(--gray);
+}
+.modalnum {
+  background-color: var(--soft);
+  border-radius: 10px 10px 10px 10px;
+  border : 1px solid var(--white);
+  position: absolute;
+  left: 15%;
+  top: 15%;
+  width: 70%;
+  height: 70%;
+  text-align: center;
+  font-size: 36px;
+  z-index: 3;
+}
+.modalhelp {
+  margin: 10px;
+}
+
+/* ローディングボール */
+#loadingwall {
+  width:100%;
+  height:100%;
+  background-color: var(--dark-transparent);
+  position: relative;
+  z-index: 998;
+}
+
+.loading {
+  position: absolute;
+  z-index: 9999;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+}
+.ball {
+  width: 50%;
+  height: 30px;
+  position: absolute;
+  top: calc(50% - 10px);
+  transform-origin: 100% 50%;
+  left: 0;
+}
+.ball::before {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ball-1::before {
+  animation: loading 1s linear 0s infinite;
+}
+.ball-2 {
+  transform: rotate(45deg);
+}
+.ball-2::before {
+  animation: loading 1s linear -0.125s infinite;
+}
+.ball-3 {
+  transform: rotate(90deg);
+}
+.ball-3::before {
+  animation: loading 1s linear -0.25s infinite;
+}
+.ball-4 {
+  transform: rotate(135deg);
+}
+.ball-4::before {
+  animation: loading 1s linear -0.375s infinite;
+}
+.ball-5 {
+  transform: rotate(180deg);
+}
+.ball-5::before {
+  animation: loading 1s linear -0.5s infinite;
+}
+.ball-6 {
+  transform: rotate(225deg);
+}
+.ball-6::before {
+  animation: loading 1s linear -0.625s infinite;
+}
+.ball-7 {
+  transform: rotate(270deg);
+}
+.ball-7::before {
+  animation: loading 1s linear -0.75s infinite;
+}
+.ball-8 {
+  transform: rotate(315deg);
+}
+.ball-8::before {
+  animation: loading 1s linear -0.875s infinite;
+}
+@keyframes loading {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 6px;
+    height: 6px;
+    opacity: .2;
+    margin-left: 7px;
+  }
+}
+
+/*----------------------------------------
+    情報パネル
+-----------------------------------------*/
+.panel {
+  width: var(--width-modal);
+  height: var(--height-modal);
+  margin: 0;
+  padding: 0;
+  background-color: var(--white);
+  border-radius: 20px;
+  border: 1px solid var(--gray);
+  color: var(--gray);
+  position:fixed;
+  top: 50px;
+  right:50px;
+  z-index: 2;
+  text-align: center;
+  font-size: 36px;
+  overflow-y: scroll;
+}
+
+/*----------------------------------------
+    各画面コンポーネント
+-----------------------------------------*/
+/* 通常走行選択画面 */
+#selectlist {
+  overflow-y: scroll;
+  width: var(--width-main);
+  height: var(--height-main);
+  padding: 0;
+  margin: 0;
+}
+.selectbox {
+  width: 18%;
+  height:25%;
+  margin-right: 1.5%;
+  border-radius: 10px 10px 10px 10px;
+  border : 1px solid var(--white);
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  word-wrap: break-word;
+  float: left;
+}
+.relocatebox {
+  width: 18%;
+  height:25%;
+  margin-right: 1.5%;
+  border-radius: 10px 10px 10px 10px;
+  border : 1px solid var(--white);
+  background-color: var(--danger);
+  color: var(--white);
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  word-wrap: break-word;
+  float: left;
+}
+
+.button_tr {
+  width: 150px;
+  height: 60px;
+  border-radius: 10px 10px 10px 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.clear {
+  color: var(--white);
+  background-color: var(--danger);
+}
+
+/* 連続走行選択画面 */
+#sequencelist {
+  overflow-y: scroll;
+  height: 400px;
+  width: var(--width-half);
+  /* height: var(--height-main); */
+  padding: 0;
+  margin: 0;
+  float: left;
+}
+.sequence_destination_list {
+  height: 400px;
+  overflow-y: scroll;
+  position:relative;
+  width: var(--width-half);
+  /* height: var(--height-main); */
+  padding: 0;
+  margin: 0;
+  float: left;
+}
+.sequence_viewlist {
+  width: 95%;
+  height:75px;
+  font-size: 30px;
+  border-radius: 10px 10px 10px 10px;
+  border : 1px solid var(--primary);
+  color: var(--primary);
+  overflow-y: scroll;
+  position:relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.sequencebox {
+  width: 45%;
+  height:15%;
+  margin-right: 1.5%;
+  border-radius: 10px 10px 10px 10px;
+  border : 1px solid var(--white);
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  word-wrap: break-word;
+  float: left;
+}
+.gobutton {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 20px;
+}
+.button_go {
+  width: 100%;
+  height:100%;
+  margin-right: 1.5%;
+  border-radius: 10px 10px 10px 10px;
+  border : 1px solid var(--white);
+  background-color: var(--operation);
+  color: var(--white);
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.chargerelseasebutton {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 20px;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+}
+
+.current_location {
+  background: var(--dark);
+}
+.move_to {
+  background: var(--warning);
+}
+.selected {
+  background: var(--primary);
+}
+
+
+/* 顔画面 */
+.face {
+  background-image: url("../image/face_2.png");
+  background-size: contain;
+}
+
+/* 移動中画面 */
+.onmoveicon {
+  width:400px;
+  height:400px;
+  position: absolute;
+  z-index: 999;
+  bottom: 10px;
+  left:10px;
+  text-align: center;
+}
+.onmoveicon img{
+  margin: 5px;
+  padding: 0;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  bottom: 20px;
+  left:0;
+}
+.onmoveicon p {
+  position: absolute;
+  bottom: 0;
+  left:30px;
+}
+
+/* 自動発進画面 */
+.autostart_button {
+  width: 100%;  width: 100%;
+  height:40%;
+  margin-right: 10px;
+  border-radius: 10px 10px 10px 10px;
+  border : 1px solid var(--white);
+  background-color: var(--operation);
+  color:  var(--white);
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+}
+
+/* warkomi */
+.cutin_button {
+  width: 100%;  width: 100%;
+  height:10%;
+  margin-right: 10px;
+  border-radius: 10px 10px 10px 10px;
+  border : 1px solid var(--white);
+  background-color: var(--operation);
+  color:  var(--white);
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  bottom: 30px;
+}
+
+
+/* 移動中画面 */
+.altericon {
+  width:100px;
+  height:100px;
+  background-color: var(--dim);
+  position: absolute;
+  font-size: 36px;
+  line-height: 40px;
+  border-radius: 50%;
+  /* border: 1px solid var(--gray); */
+  bottom: 10px;
+  left:10px;
+  display: flex;
+  text-align: center;
+  vertical-align: middle;
+  justify-items: center;
+  align-items: center;
+}
+
+.altermode {
+  color: var(--white);
+  background-color: var(--info);
+}
+
+.contentLarge {
+  width: 100%;
+  height: 100%;
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 72px;
+  text-align: center;
+}
+
+.contentLarge img {
+  height: 50%;
+  text-align: center;
+}
+
+
+
+
+
+/*----------------------------------------
+    自動発進
+-----------------------------------------*/
+
+.action_button {
+  width: 100%;
+  height:40%;
+  margin-right: 2.5%;
+  margin-bottom: 15%;
+  border-radius: 10px 10px 10px 10px;
+  border : 1px solid var(--white);
+  background-color: var(--operation);
+  color:  var(--white);
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  z-index: 1s;
+}
+.complete_countdown {
+  width: 20%;
+  height:20%;
+  border-radius: 10px 10px 10px 10px;
+  border : 1px solid var(--dark);
+  background-color: var(--white);
+  color:  var(--dark);
+  font-size: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.complete_stack {
+  width: 58%;
+  height:20%;
+  border-radius: 10px 10px 10px 10px;
+  border : 1px solid var(--dark);
+  background-color: var(--white);
+  color:  var(--dark);
+  font-size: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.complete_select {
+  width: 20%;
+  height:20%;
+  border-radius: 10px 10px 10px 10px;
+  border : 1px solid var(--white);
+  background-color: var(--warning);
+  color:  var(--white);
+  font-size: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+.hid {
+  display: none!important;
+}
+
+.chargerelease {
+  width: 100%;
+  height:40%;
+  position: absolute;
+  z-index: 9999;
+  bottom: 0;
+  margin-right: 2.5%;
+  margin-bottom: 15%;
+  border-radius: 10px 10px 10px 10px;
+  border : 1px solid var(--white);
+  background-color: var(--danger);
+  color:  var(--white);
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

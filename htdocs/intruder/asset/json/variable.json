@@ -35,6 +35,8 @@
         "tolerance" : "110"
       },
       "order" : [],
+      "auto_return_camera" : 0,
+      "auto_return_camera_afterwait" : 5,
       "sequence" : {
         "destination_list" : [],
         "wait" : "25"

@@ -5,7 +5,9 @@
 $(function(){
   // モーダルオープン処理共通発火部
   $('.modal-opener').click(function() {
-    nav($(this).attr('id'))
+    if (basename != 'onmove') {
+      nav($(this).attr('id'))
+    }
   });
   // モーダル内部処理共通発火部
   $('.modal-button').click(function() {
@@ -79,7 +81,7 @@ $(function(){
 function nav(id) {
   // console.log('openModal:('+id+')')
   // 単純移動
-  var trans = ['select', 'map' ,'index', 'relocate', 'face', 'usbdebug']
+  var trans = ['select', 'map' ,'index', 'relocate', 'face', 'debug']
   if ($.inArray(id, trans) >= 0) {transScreen(id)}
 
   // 単純オープン
@@ -592,6 +594,19 @@ function init_map_check() {
   if (destination_list == undefined || current_map == undefined) {
     transScreen('error', '?error=nomap')
   }
+
+  autoReturnCamera = getVariable('auto_return_camera');
+  if (autoReturnCamera == 1) {
+    if (debug == 'release') {
+      camera = [100,101];
+      Object.keys(camera).forEach(function(key) {
+        sendCamera(camera[key])
+      });
+    }
+    // setVariable('auto_return_camera_basewait', 20)
+    // setVariable('auto_return_camera_afterwait', 20)
+  }
+
   transScreen('select')
 }
 // 地図選択画面での地図描画
@@ -620,9 +635,18 @@ function setMap(map_id) {
 // 目的地リスト描画
 function viewDestinationList(func, target = 'selectbox') {
   var destination_list = getVariable('destination_list')
-  var order = JSON.parse(getVariable('order'))
   if (destination_list == undefined) {
     transScreen('error', '?error=nomap')
+  }
+  
+  tempOrder = getVariable('order')
+  console.log('目的地リスト描画')
+  console.debug(tempOrder)
+  if (tempOrder != undefined) {
+    var order = JSON.parse(tempOrder)
+  } else {
+    setVariable('order', destination_list)
+    var order = JSON.parse(destination_list)
   }
 
   current_location = getVariable('current_location')
@@ -641,8 +665,8 @@ function viewDestinationList(func, target = 'selectbox') {
 // 目的地選択画面運搬モードチェック
 function tripmode_check(target) {
   tripmode = getVariable('trip_mode')
-  // setLog('tripmode:'+tripmode)
-  // setLog('target:'+target)
+  setLog('tripmode:'+tripmode)
+  setLog('target:'+target)
   if (tripmode == 'sequence') {
     if (target != 'sequence') {
       transScreen('sequence')
@@ -662,7 +686,8 @@ function tripmode_check(target) {
       transScreen('select')
     }
   } else {
-    transScreen('error', '?error=tripmode')
+    // transScreen('error', '?error=tripmode')
+    transScreen('index')
   }
   return
 }
@@ -670,6 +695,7 @@ function tripmode_check(target) {
 function showTripmode() {
   tripmode = getVariable('trip_mode')
   turnaround = getVariable('turnaround')
+  map_name = getVariable('current_map')
   modename = {'normal':'通常走行', 'sequence':'連続走行', 'hub':'拠点走行', 'senario': 'シナリオ走行'}
   text = modename[tripmode]
   if (turnaround == 'true') {

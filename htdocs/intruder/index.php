@@ -9,6 +9,7 @@
   setTimeout(init,2000)
   setUnderMessage(mainversion)
   setTimeout(function(){playAnnounce('wakeup')}, 1000)
+  
   //ループスクリプト
   function countup() {
 

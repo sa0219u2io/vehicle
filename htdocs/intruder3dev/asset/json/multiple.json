@@ -1,0 +1,43 @@
+{
+    "default": {
+        "work": {
+            "list": [],
+            "number": 0,
+            "from": null,
+            "to": null,
+            "reset": 0,
+            "ready": false
+        },
+        "current_location": "",
+        "mynumber": 0
+    },
+    "192.168.11.44": {
+        "work": {
+            "list": [],
+            "number": 0,
+            "from": "退避場所",
+            "to": "拠点",
+            "reset": 0,
+            "ready": false,
+            "onmove": false
+        },
+        "current_location": "",
+        "mynumber": 1
+    },
+    "192.168.11.31": {
+        "work": {
+            "list": [
+                "A",
+                "拠点"
+            ],
+            "number": 0,
+            "from": "C",
+            "to": "A",
+            "reset": 0,
+            "ready": false
+        },
+        "current_location": "",
+        "mynumber": 0
+    },
+    "": null
+}
